@@ -1,0 +1,93 @@
+/* assets/styles/register.css */
+
+#register-section {
+    max-width: 400px;
+    min-width: 200px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: var(--register-background-color);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+#register-form {
+    display: flex;
+    flex-direction: column;
+}
+
+#register-form label {
+    margin-bottom: 5px;
+}
+
+#register-form input {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+}
+
+#register-form button {
+    padding: 10px;
+    background-color: var(--button-background-color);
+    color: var(--button-text-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#register-form button:hover {
+    background-color: var(--button-hover-background-color);
+}
+main {
+    padding: 20px;
+    max-width: 800px;
+    height:90vh;
+    margin: 20px auto;
+    background-color: var(--main-background-color);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    transition: background-color 0.3s;
+    animation: fadeIn 0.5s ease-in-out;
+}
+/* Темы */
+:root {
+    --register-background-color: #fff;
+    --border-color: #ccc;
+    --button-background-color: #007BFF;
+    --button-text-color: #fff;
+    --button-hover-background-color: #0056b3;
+}
+
+.theme-one-dark {
+    --register-background-color: #1e2127;
+    --border-color: #616e88;
+    --button-background-color: #61afef;
+    --button-text-color: #fff;
+    --button-hover-background-color: #569cd6;
+}
+
+.theme-atom {
+    --register-background-color: #1d1f21;
+    --border-color: #585858;
+    --button-background-color: #589636;
+    --button-text-color: #fff;
+    --button-hover-background-color: #49802f;
+}
+
+.theme-vscode {
+    --register-background-color: #1e1e1e;
+    --border-color: #444444;
+    --button-background-color: #007acc;
+    --button-text-color: #fff;
+    --button-hover-background-color: #005a9e;
+}
+
+.theme-dracula {
+    --register-background-color: #282a36;
+    --border-color: #44475a;
+    --button-background-color: #ff79c6;
+    --button-text-color: #fff;
+    --button-hover-background-color: #ff55b1;
+}

@@ -1,0 +1,297 @@
+/* Popup styles */
+.popup {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    animation: fadeIn 0.3s;
+}
+
+.popup-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    position: relative;
+    text-align: center;
+    animation: slideIn 0.3s;
+    border-radius: 20px;
+}
+
+.close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        top: -300px;
+        opacity: 0;
+    }
+    to {
+        top: 0;
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes slideOut {
+    from {
+        top: 0;
+        opacity: 1;
+    }
+    to {
+        top: -300px;
+        opacity: 0;
+    }
+}
+
+a {
+    color: #1e68ce;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+    line-height: 1;
+    margin: 8px 0 12px;
+    color: #185bb6;
+}
+
+p {
+    text-align: justify;
+    word-spacing: .1ex;
+    line-height: 1.6;
+    margin-bottom: 1em;
+}
+
+aside li {
+    list-style-image: url('../img/marker.png');
+    list-style-position: inside;
+}
+
+aside li:hover {
+    background-color: #fff;
+}
+
+
+aside h2, ul {
+    margin-left: 15px;
+}
+
+span {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-repeat: no-repeat;
+}
+
+.main-content {
+    margin-left: 5px;
+    background-color: #ecf0f1;
+    font-size: 1em;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+.menu-btn-content {
+    display: inline-block; /* Для правильного позиционирования */
+    margin-left: 5px;
+    background-color: #ecf0f1; /* Светло-серый фон */
+    font-size: 1em; /* Размер текста */
+    padding: 10px 20px; /* Отступы вокруг текста */
+    margin-bottom: 10px;
+    border: 2px solid #ccc; /* Граница */
+    border-radius: 5px; /* Скруглённые углы */
+    color: #333; /* Цвет текста */
+    text-align: center; /* Выравнивание текста */
+    text-decoration: none; /* Убираем подчёркивание */
+    cursor: pointer; /* Указатель при наведении */
+    transition: background-color 0.3s, border-color 0.3s, color 0.3s; /* Анимация */
+}
+
+/* Эффекты при наведении */
+.menu-btn-content:hover {
+    background-color: #ecf0f1; /* Более тёмный фон */
+    border-color: #999; /* Темнее граница */
+    color: #000; /* Цвет текста */
+}
+
+/* Эффект при нажатии */
+.menu-btn-content:active {
+    background-color: #c8cfbb; /* Ещё более тёмный фон */
+    border-color: #666; /* Ещё темнее граница */
+    color: #111; /* Цвет текста */
+}
+
+/* Дополнительно для кнопки в виде ссылки */
+.menu-btn-content a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.left-content,
+.right-content {
+    border: 2px solid gray;
+    width: calc(50% - 20px); /* 50% ширины минус отступы */
+    height: 80vh;
+    background-color: #ecf0f1;
+    margin: 10px; /* добавляем отступы */
+    float: left; /* размещение блоков рядом */
+    text-align: right;
+    box-sizing: border-box; /* учитываем отступы и рамки внутри ширины */
+}
+
+.left-content-index,
+.right-content-index {
+    margin: 5px 10px 5px 5px;
+}
+.image-block-content {
+    position: absolute;
+}
+
+.picture {
+    position: absolute;
+    border: 2px dashed gray;
+}
+
+.part-picture-0 {
+    position: absolute;
+    top: 152px;
+    left: -9999px;
+    border: 0;
+}
+
+/* Стиль для картинок при наведении */
+.part-picture-1,
+.part-picture-2,
+.part-picture-3,
+.part-picture-4,
+.part-picture-5,
+.part-picture-6,
+.part-picture-7,
+.part-picture-8,
+.part-picture-9,
+.part-picture-10 {
+    width: 150px; /* Фиксированная ширина */
+    height: 150px; /* Фиксированная высота */
+    object-fit: contain;
+    position: absolute; /* Абсолютное позиционирование */
+    transition: transform 0.3s ease, border 0.3s ease; /* Плавное изменение */
+}
+/* Стили для картинок при наведении */
+.part-picture-1:hover,
+.part-picture-2:hover,
+.part-picture-3:hover,
+.part-picture-4:hover,
+.part-picture-5:hover,
+.part-picture-6:hover,
+.part-picture-7:hover,
+.part-picture-8:hover,
+.part-picture-9:hover,
+.part-picture-10:hover {
+    cursor: grab; /* Изменяем курсор на захват */
+    transform: scale(1.2); /* Увеличиваем картинку на 20% */
+    transition: transform 0.3s ease, border 0.3s ease; /* Плавное изменение */
+}
+
+/* Дополнительные стили для курсора, когда его удерживают */
+.part-picture-1:active,
+.part-picture-2:active,
+.part-picture-3:active,
+.part-picture-4:active,
+.part-picture-5:active,
+.part-picture-6:active,
+.part-picture-7:active,
+.part-picture-8:active,
+.part-picture-9:active,
+.part-picture-10:active {
+    border: 3px solid #3498db!important; /* Выделяем бордером с синим цветом */
+    cursor: grabbing; /* Курсор меняется на "grabbing" при удержании */
+}
+
+
+/* Позиционирование для первого ряда */
+.content1 { top: 250px; left: 50px; }
+.content2 { top: 250px; left: 220px; }
+.content3 { top: 250px; left: 390px; }
+
+/* Позиционирование для второго ряда */
+.content4 { top: 420px; left: 50px; }
+.content5 { top: 420px; left: 220px; }
+.content6 { top: 420px; left: 390px; }
+
+/* Позиционирование для третьего ряда */
+.content7 { top: 590px; left: 50px; }
+.content8 { top: 590px; left: 220px; }
+.content9 { top: 590px; left: 390px; }
+
+/* Позиционирование для десятой картинки */
+.content10 { top: 760px; left: 50px; }
+
+/* Стиль для счетчика */
+/* Стиль для tooltip, который будет отображаться на счетчике */
+.tooltip-counter {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    display: none;
+    white-space: nowrap;
+    z-index: 10;
+    pointer-events: none; /* Чтобы подсказка не блокировала элементы */
+    transition: opacity 0.3s ease;
+}
+
+/* Стили для счетчика */
+.counter-sucessfully-image {
+    font-size: 20px;
+    font-weight: bold;
+    color: #2c3e50;
+    /* padding: 20px; */
+    text-align: center;
+    background-color: #ecf0f1;
+    padding: 10px;
+    border-radius: 5px;
+    width: 350px;
+    margin: 0 auto;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative; /* Для позиционирования tooltip */
+}

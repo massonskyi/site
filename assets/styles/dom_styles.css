@@ -1,0 +1,33 @@
+#phrase-container {
+    height: 90vh;
+    margin: 20px;
+}
+
+.class1 {
+    background-color: #ffcccb;
+}
+
+.class2 {
+    background-color: #b3ffb3;
+}
+
+button {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+}
+
+aside {
+    background-color: #e9ecef;
+    padding: 20px;
+    margin: 20px;
+    border-left: 5px solid #adb5bd;
+}
+
+#nested-list {
+    list-style-type: decimal;
+}
+
+#nested-list li {
+    margin: 10px 0;
+}

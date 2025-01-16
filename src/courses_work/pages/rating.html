@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rating</title>
+    <link rel="stylesheet" href="../../../assets/styles/corses_style.css">
+    <link rel="stylesheet" href="../../../assets/styles/rating.css">
+    <link rel="stylesheet" href="../../../assets/styles/navbar.css">
+    <link rel="stylesheet" href="../../../assets/styles/footer.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="game.html">Play Game</a></li>
+            <li><a href="rating.html">Rating</a></li>
+            <li>
+                <select id="theme-selector" onchange="changeTheme()">
+                    <option value="default">Default</option>
+                    <option value="one-dark">One Dark</option>
+                    <option value="atom">Atom</option>
+                    <option value="vscode">VSCode</option>
+                    <option value="dracula">Dracula</option>
+                </select>
+            </li>
+        </ul>
+    </nav>
+    <main>
+        <header>
+            <h1>Rating</h1>
+            <p>Check out the top scores!</p>
+        </header>
+
+        <div id="rating-section">
+            <h2>Top Scores</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Username</th>
+                        <th>Score</th>
+                        <th>Time</th>
+                    </tr>
+                </thead>
+                <tbody id="rating-table">
+                    <!-- Ratings will be inserted here -->
+                </tbody>
+            </table>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2025 Game App. All rights reserved.</p>
+    </footer>
+    <script src="../../../assets/scripts/rating.js"></script>
+    <script>
+        function changeTheme() {
+            const theme = document.getElementById('theme-selector').value;
+            document.body.className = `theme-${theme}`;
+            localStorage.setItem('theme', theme);
+        }
+
+        function applySavedTheme() {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme) {
+                document.body.className = `theme-${savedTheme}`;
+                document.getElementById('theme-selector').value = savedTheme;
+            }
+        }
+        window.addEventListener('load', applySavedTheme);
+    </script>
+</body>
+</html>

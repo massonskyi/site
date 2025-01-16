@@ -1,0 +1,401 @@
+/* assets/styles/game.css */
+
+/* Общие стили для страницы игры */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--game-background-color);
+    color: var(--game-text-color);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Стили для заголовков */
+h1, h2, h3 {
+    color: var(--game-heading-color);
+}
+
+/* Стили для основного контента */
+main {
+    padding: 20px;
+    max-width: 800px;
+    height: 90vh;
+    margin: 20px auto;
+    background-color: var(--game-main-background-color);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    transition: background-color 0.3s;
+    animation: fadeIn 0.5s ease-in-out;
+}
+/* Стили для секций */
+section {
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: var(--game-section-background-color);
+    transition: background-color 0.3s;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Стили для кнопок */
+button {
+    padding: 10px 20px;
+    background-color: var(--game-button-background-color);
+    color: var(--game-button-text-color);
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+button:hover {
+    background-color: var(--game-button-hover-background-color);
+}
+
+/* Стили для вопросов */
+.question {
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: var(--game-question-background-color);
+    transition: background-color 0.3s;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.question h3 {
+    margin-bottom: 10px;
+}
+
+.question p {
+    margin-bottom: 20px;
+}
+
+/* Стили для вариантов ответов */
+.options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.option {
+    padding: 10px;
+    border-radius: 10px;
+    background-color: var(--game-option-background-color);
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.option:hover {
+    background-color: var(--game-option-hover-background-color);
+}
+
+/* Стили для уровней */
+.level {
+    display: none;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Стили для drag-and-drop */
+.drag-drop-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.drag-item {
+    padding: 10px;
+    border-radius: 10px;
+    background-color: var(--game-drag-item-background-color);
+    cursor: grab;
+    transition: background-color 0.3s;
+}
+
+.drag-item:hover {
+    background-color: var(--game-drag-item-hover-background-color);
+}
+
+.drop-zone {
+    width: 200px;
+    height: 50px;
+    border: 2px dashed var(--game-drop-zone-border-color);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--game-drop-zone-background-color);
+    transition: background-color 0.3s;
+    margin-top: 20px;
+}
+
+/* Стили для match-the-pairs */
+.match-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.match-item {
+    padding: 10px;
+    border-radius: 10px;
+    background-color: var(--game-match-item-background-color);
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.match-item:hover {
+    background-color: var(--game-match-item-hover-background-color);
+}
+
+/* Стили для блока настроек */
+.settings-block {
+    position: fixed;
+    top: 70px; /* Смещаем блок ниже навигационной панели */
+    right: -600px; /* Скрываем блок за пределами экрана */
+    width: 300px;
+    height: 100%;
+    background-color: var(--settings-background-color);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+    transition: right 0.3s ease-in-out;
+    z-index: 1000;
+}
+
+.settings-block.open {
+    right: 20px; /* Показываем блок */
+}
+
+.settings-block h3 {
+    margin-bottom: 20px;
+}
+
+.settings-block label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.settings-block select,
+.settings-block input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid var(--settings-border-color);
+    border-radius: 5px;
+}
+
+.settings-block button {
+    width: 100%;
+    padding: 10px;
+    background-color: var(--settings-button-background-color);
+    color: var(--settings-button-text-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.settings-block button:hover {
+    background-color: var(--settings-button-hover-background-color);
+}
+
+/* Стили для кнопки открытия/закрытия блока настроек */
+.settings-toggle {
+    position: fixed;
+    top: 70px; /* Смещаем кнопку ниже навигационной панели */
+    right: 20px;
+    background-color: var(--settings-toggle-background-color);
+    color: var(--settings-toggle-text-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1001;
+    transition: background-color 0.3s;
+}
+
+.settings-toggle:hover {
+    background-color: var(--settings-toggle-hover-background-color);
+}
+
+/* Стили для таймера */
+.timer {
+    position: fixed;
+    top: 70px; /* Смещаем таймер ниже навигационной панели */
+    left: 20px;
+    background-color: var(--timer-background-color);
+    color: var(--timer-text-color);
+    border-radius: 5px;
+    padding: 10px;
+    z-index: 1001;
+}
+
+/* Анимации */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+/* Темы */
+:root {
+    --game-background-color: #f4f4f4;
+    --game-text-color: #333;
+    --game-heading-color: #444;
+    --game-main-background-color: #fff;
+    --game-section-background-color: #fff;
+    --game-button-background-color: #007BFF;
+    --game-button-text-color: #fff;
+    --game-button-hover-background-color: #0056b3;
+    --game-question-background-color: #f9f9f9;
+    --game-option-background-color: #e9e9e9;
+    --game-option-hover-background-color: #d9d9d9;
+    --game-drag-item-background-color: #e9e9e9;
+    --game-drag-item-hover-background-color: #d9d9d9;
+    --game-drop-zone-border-color: #ccc;
+    --game-drop-zone-background-color: #f9f9f9;
+    --game-match-item-background-color: #e9e9e9;
+    --game-match-item-hover-background-color: #d9d9d9;
+    --settings-background-color: #fff;
+    --settings-border-color: #ccc;
+    --settings-button-background-color: #007BFF;
+    --settings-button-text-color: #fff;
+    --settings-button-hover-background-color: #0056b3;
+    --settings-toggle-background-color: #007BFF;
+    --settings-toggle-text-color: #fff;
+    --settings-toggle-hover-background-color: #0056b3;
+    --timer-background-color: #007BFF;
+    --timer-text-color: #fff;
+}
+
+.theme-one-dark {
+    --game-background-color: #282c34;
+    --game-text-color: #abb2bf;
+    --game-heading-color: #e06c75;
+    --game-main-background-color: #1e2127;
+    --game-section-background-color: #1e2127;
+    --game-button-background-color: #61afef;
+    --game-button-text-color: #fff;
+    --game-button-hover-background-color: #569cd6;
+    --game-question-background-color: #1e2127;
+    --game-option-background-color: #282c34;
+    --game-option-hover-background-color: #3c3f4a;
+    --game-drag-item-background-color: #282c34;
+    --game-drag-item-hover-background-color: #3c3f4a;
+    --game-drop-zone-border-color: #616e88;
+    --game-drop-zone-background-color: #1e2127;
+    --game-match-item-background-color: #282c34;
+    --game-match-item-hover-background-color: #3c3f4a;
+    --settings-background-color: #1e2127;
+    --settings-border-color: #616e88;
+    --settings-button-background-color: #61afef;
+    --settings-button-text-color: #fff;
+    --settings-button-hover-background-color: #569cd6;
+    --settings-toggle-background-color: #61afef;
+    --settings-toggle-text-color: #fff;
+    --settings-toggle-hover-background-color: #569cd6;
+    --timer-background-color: #61afef;
+    --timer-text-color: #fff;
+}
+
+.theme-atom {
+    --game-background-color: #2d2d2d;
+    --game-text-color: #c5c8c6;
+    --game-heading-color: #98c379;
+    --game-main-background-color: #1d1f21;
+    --game-section-background-color: #1d1f21;
+    --game-button-background-color: #589636;
+    --game-button-text-color: #fff;
+    --game-button-hover-background-color: #49802f;
+    --game-question-background-color: #1d1f21;
+    --game-option-background-color: #2d2d2d;
+    --game-option-hover-background-color: #373b41;
+    --game-drag-item-background-color: #2d2d2d;
+    --game-drag-item-hover-background-color: #373b41;
+    --game-drop-zone-border-color: #585858;
+    --game-drop-zone-background-color: #1d1f21;
+    --game-match-item-background-color: #2d2d2d;
+    --game-match-item-hover-background-color: #373b41;
+    --settings-background-color: #1d1f21;
+    --settings-border-color: #585858;
+    --settings-button-background-color: #589636;
+    --settings-button-text-color: #fff;
+    --settings-button-hover-background-color: #49802f;
+    --settings-toggle-background-color: #589636;
+    --settings-toggle-text-color: #fff;
+    --settings-toggle-hover-background-color: #49802f;
+    --timer-background-color: #589636;
+    --timer-text-color: #fff;
+}
+
+.theme-vscode {
+    --game-background-color: #1e1e1e;
+    --game-text-color: #d4d4d4;
+    --game-heading-color: #569cd6;
+    --game-main-background-color: #1e1e1e;
+    --game-section-background-color: #1e1e1e;
+    --game-button-background-color: #007acc;
+    --game-button-text-color: #fff;
+    --game-button-hover-background-color: #005a9e;
+    --game-question-background-color: #1e1e1e;
+    --game-option-background-color: #2d2d2d;
+    --game-option-hover-background-color: #333333;
+    --game-drag-item-background-color: #2d2d2d;
+    --game-drag-item-hover-background-color: #333333;
+    --game-drop-zone-border-color: #444444;
+    --game-drop-zone-background-color: #1e1e1e;
+    --game-match-item-background-color: #2d2d2d;
+    --game-match-item-hover-background-color: #333333;
+    --settings-background-color: #1e1e1e;
+    --settings-border-color: #444444;
+    --settings-button-background-color: #007acc;
+    --settings-button-text-color: #fff;
+    --settings-button-hover-background-color: #005a9e;
+    --settings-toggle-background-color: #007acc;
+    --settings-toggle-text-color: #fff;
+    --settings-toggle-hover-background-color: #005a9e;
+    --timer-background-color: #007acc;
+    --timer-text-color: #fff;
+}
+
+.theme-dracula {
+    --game-background-color: #282a36;
+    --game-text-color: #f8f8f2;
+    --game-heading-color: #ff79c6;
+    --game-main-background-color: #282a36;
+    --game-section-background-color: #282a36;
+    --game-button-background-color: #ff79c6;
+    --game-button-text-color: #fff;
+    --game-button-hover-background-color: #ff55b1;
+    --game-question-background-color: #282a36;
+    --game-option-background-color: #44475a;
+    --game-option-hover-background-color: #5a5c6e;
+    --game-drag-item-background-color: #44475a;
+    --game-drag-item-hover-background-color: #5a5c6e;
+    --game-drop-zone-border-color: #44475a;
+    --game-drop-zone-background-color: #282a36;
+    --game-match-item-background-color: #44475a;
+    --game-match-item-hover-background-color: #5a5c6e;
+    --settings-background-color: #282a36;
+    --settings-border-color: #44475a;
+    --settings-button-background-color: #ff79c6;
+    --settings-button-text-color: #fff;
+    --settings-button-hover-background-color: #ff55b1;
+    --settings-toggle-background-color: #ff79c6;
+    --settings-toggle-text-color: #fff;
+    --settings-toggle-hover-background-color: #ff55b1;
+    --timer-background-color: #ff79c6;
+    --timer-text-color: #fff;
+}

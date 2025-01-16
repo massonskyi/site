@@ -1,0 +1,117 @@
+/* assets/styles/navbar.css */
+
+nav {
+    background-color: var(--navbar-background-color);
+    color: var(--navbar-text-color);
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 10px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--navbar-text-color);
+    padding: 10px 15px;
+    border-radius: 20px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: var(--navbar-hover-background-color);
+    color: var(--navbar-hover-text-color);
+}
+
+nav ul li select {
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+    background-color: var(--navbar-background-color);
+    color: var(--navbar-text-color);
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+nav ul li select:hover {
+    background-color: var(--navbar-hover-background-color);
+    color: var(--navbar-hover-text-color);
+}
+
+/* Анимации */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+nav {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+nav ul li a {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+nav ul li select {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Темы */
+:root {
+    --navbar-background-color: #fff;
+    --navbar-text-color: #333;
+    --navbar-hover-background-color: #f0f0f0;
+    --navbar-hover-text-color: #000;
+}
+
+.theme-one-dark {
+    --navbar-background-color: #1e2127;
+    --navbar-text-color: #abb2bf;
+    --navbar-hover-background-color: #3c3f4a;
+    --navbar-hover-text-color: #fff;
+}
+
+.theme-atom {
+    --navbar-background-color: #1d1f21;
+    --navbar-text-color: #c5c8c6;
+    --navbar-hover-background-color: #373b41;
+    --navbar-hover-text-color: #fff;
+}
+
+.theme-vscode {
+    --navbar-background-color: #1e1e1e;
+    --navbar-text-color: #d4d4d4;
+    --navbar-hover-background-color: #333333;
+    --navbar-hover-text-color: #fff;
+}
+
+.theme-dracula {
+    --navbar-background-color: #282a36;
+    --navbar-text-color: #f8f8f2;
+    --navbar-hover-background-color: #44475a;
+    --navbar-hover-text-color: #fff;
+}

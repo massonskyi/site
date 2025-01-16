@@ -1,0 +1,87 @@
+/* assets/styles/rating.css */
+
+/* Стили для секции рейтинга */
+#rating-section {
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: var(--rating-background-color);
+    transition: background-color 0.3s;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+#rating-section h2 {
+    margin-bottom: 20px;
+}
+
+#rating-section table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#rating-section th,
+#rating-section td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid var(--rating-border-color);
+}
+
+#rating-section th {
+    background-color: var(--rating-header-background-color);
+    color: var(--rating-header-text-color);
+}
+
+#rating-section tr:nth-child(even) {
+    background-color: var(--rating-row-background-color);
+}
+
+/* Анимации */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Темы */
+:root {
+    --rating-background-color: #fff;
+    --rating-border-color: #ccc;
+    --rating-header-background-color: #f4f4f4;
+    --rating-header-text-color: #333;
+    --rating-row-background-color: #f9f9f9;
+}
+
+.theme-one-dark {
+    --rating-background-color: #1e2127;
+    --rating-border-color: #616e88;
+    --rating-header-background-color: #282c34;
+    --rating-header-text-color: #abb2bf;
+    --rating-row-background-color: #3c3f4a;
+}
+
+.theme-atom {
+    --rating-background-color: #1d1f21;
+    --rating-border-color: #585858;
+    --rating-header-background-color: #2d2d2d;
+    --rating-header-text-color: #c5c8c6;
+    --rating-row-background-color: #373b41;
+}
+
+.theme-vscode {
+    --rating-background-color: #1e1e1e;
+    --rating-border-color: #444444;
+    --rating-header-background-color: #2d2d2d;
+    --rating-header-text-color: #d4d4d4;
+    --rating-row-background-color: #333333;
+}
+
+.theme-dracula {
+    --rating-background-color: #282a36;
+    --rating-border-color: #44475a;
+    --rating-header-background-color: #44475a;
+    --rating-header-text-color: #f8f8f2;
+    --rating-row-background-color: #5a5c6e;
+}

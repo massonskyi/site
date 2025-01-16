@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game</title>
+    <link rel="stylesheet" href="../../../../assets/styles/style.css">
+    <link rel="stylesheet" href="../../../../assets/styles/game.css">
+    <link rel="stylesheet" href="../../../../assets/styles/navbar.css">
+    <link rel="stylesheet" href="../../../../assets/styles/footer.css">
+    <style>
+        .quiz-option {
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .quiz-option:hover {
+            background-color: #f0f0f0;
+        }
+
+        .quiz-input {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .sort-container {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .sort-item {
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            cursor: grab;
+            background-color: #f9f9f9;
+        }
+
+        .sort-item.dragging {
+            opacity: 0.5;
+        }
+
+        .check-button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .check-button:hover {
+            background-color: #0056b3;
+        }
+
+        .feedback {
+            margin-top: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .feedback.correct {
+            background-color: #d4edda;
+            color: #008000;
+        }
+
+        .feedback.incorrect {
+            background-color: #f8d7da;
+            color: #ff0000;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="game.html">Play Game</a></li>
+            <li><a href="rating.html">Rating</a></li>
+            <li>
+                <select id="theme-selector" onchange="changeTheme()">
+                    <option value="default">Default</option>
+                    <option value="one-dark">One Dark</option>
+                    <option value="atom">Atom</option>
+                    <option value="vscode">VSCode</option>
+                    <option value="dracula">Dracula</option>
+                </select>
+            </li>
+        </ul>
+    </nav>
+    <main>
+        <header>
+            <h1>Game</h1>
+            <p>Welcome to the game! Answer the questions to advance through the levels.</p>
+        </header>
+
+        <div id="level-container">
+            <!-- Level 1 - видимый по умолчанию -->
+            <div id="question-container-1">
+                <h3></h3>
+                <p></p>
+                <div id="options-container-1"></div>
+                <button id="next-button-1" style="display: none;">Next</button>
+            </div>
+        
+            <!-- Level 2 - скрытый -->
+            <div id="question-container-2" style="display: none;">
+                <h3></h3>
+                <p></p>
+                <div id="drag-drop-container-2"></div>
+                <div id="drop-zone-2"></div>
+                <button id="next-button-2" style="display: none;">Next</button>
+            </div>
+        
+            <!-- Level 3 - скрытый -->
+            <div id="question-container-3" style="display: none;">
+                <h3></h3>
+                <p></p>
+                <div id="match-container-3"></div>
+                <button id="next-button-3" style="display: none;">Next</button>
+            </div>
+        </div>
+    </main>
+    <!-- Блок настроек -->
+    <div class="settings-block" id="settings-block">
+        <h3>Settings</h3>
+        <label for="time-per-question">Time per question (seconds):</label>
+        <select id="time-per-question">
+            <option value="5">5</option>
+            <option value="10">10</option>
+            <option value="15" selected>15</option>
+            <option value="30">30</option>
+            <option value="45">45</option>
+            <option value="60">60</option>
+        </select>
+        <label for="question-difficulty">Question difficulty:</label>
+        <select id="question-difficulty">
+            <option value="easy" selected>Easy</option>
+            <option value="medium">Medium</option>
+            <option value="hard">Hard</option>
+        </select>
+        <button id="save-settings">Save Settings</button>
+    </div>
+    <!-- Кнопка для открытия/закрытия блока настроек -->
+    <button class="settings-toggle" id="settings-toggle">Settings</button>
+
+    <!-- Таймер -->
+    <div class="timer" id="timer">Time left: </div>
+
+    <footer>
+        <p>&copy; 2025 Game App. All rights reserved.</p>
+    </footer>
+    <script src="../../../assets/scripts/game.js"></script>
+    <script src="../../../assets/scripts/auth.js"></script>
+    <script>
+        function changeTheme() {
+            const theme = document.getElementById('theme-selector').value;
+            document.body.className = `theme-${theme}`;
+            localStorage.setItem('theme', theme);
+        }
+
+        function applySavedTheme() {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme) {
+                document.body.className = `theme-${savedTheme}`;
+                document.getElementById('theme-selector').value = savedTheme;
+            }
+        }
+
+        // Логика для открытия/закрытия блока настроек
+        const settingsToggle = document.getElementById('settings-toggle');
+        const settingsBlock = document.getElementById('settings-block');
+
+        settingsToggle.addEventListener('click', () => {
+            settingsBlock.classList.toggle('open');
+        });
+
+        // Логика для сохранения настроек
+        const saveSettingsButton = document.getElementById('save-settings');
+        saveSettingsButton.addEventListener('click', () => {
+            const timePerQuestion = document.getElementById('time-per-question').value;
+            const questionDifficulty = document.getElementById('question-difficulty').value;
+            // alert(`Settings saved:\nTime per question: ${timePerQuestion} seconds\nQuestion difficulty: ${questionDifficulty}`);
+            settingsBlock.classList.remove('open');
+        });
+        window.addEventListener('load', applySavedTheme);
+    </script>
+</body>
+</html>

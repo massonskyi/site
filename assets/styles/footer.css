@@ -1,0 +1,59 @@
+/* assets/styles/footer.css */
+
+/* Стили для подвала */
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background-color: var(--footer-background-color);
+    color: var(--footer-text-color);
+    border-top: 1px solid var(--footer-border-color);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    transition: background-color 0.3s, color 0.3s;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Анимации */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Темы */
+:root {
+    --footer-background-color: #333;
+    --footer-text-color: #fff;
+    --footer-border-color: #444;
+}
+
+.theme-one-dark {
+    --footer-background-color: #1e2127;
+    --footer-text-color: #abb2bf;
+    --footer-border-color: #616e88;
+}
+
+.theme-atom {
+    --footer-background-color: #1d1f21;
+    --footer-text-color: #c5c8c6;
+    --footer-border-color: #585858;
+}
+
+.theme-vscode {
+    --footer-background-color: #1e1e1e;
+    --footer-text-color: #d4d4d4;
+    --footer-border-color: #444444;
+}
+
+.theme-dracula {
+    --footer-background-color: #282a36;
+    --footer-text-color: #f8f8f2;
+    --footer-border-color: #44475a;
+}
