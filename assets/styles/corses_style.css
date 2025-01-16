@@ -17,6 +17,7 @@ h1, h2, h3 {
 
 /* Стили для основного контента */
 main {
+    height: 200vh;
     padding: 20px;
     max-width: 800px;
     margin: 20px auto;
