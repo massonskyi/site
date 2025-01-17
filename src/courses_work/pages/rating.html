@@ -12,12 +12,13 @@
 <body>
     <nav>
         <ul>
-            <li><a href="../index.html">Home</a></li>
-            <li><a href="game.html">Play Game</a></li>
-            <li><a href="rating.html">Rating</a></li>
+            <li><a href="../index.html">Вернутся</a></li>
+            <li><a href="login.html">Вход</a></li>
+            <li><a href="register.html">Регистрация</a></li>
+
             <li>
                 <select id="theme-selector" onchange="changeTheme()">
-                    <option value="default">Default</option>
+                    <option value="default">Стандартная тема</option>
                     <option value="one-dark">One Dark</option>
                     <option value="atom">Atom</option>
                     <option value="vscode">VSCode</option>
@@ -28,18 +29,18 @@
     </nav>
     <main>
         <header>
-            <h1>Rating</h1>
-            <p>Check out the top scores!</p>
+            <h1>Рейтинг наших игроков:</h1>
+            <p>Ознакомьтесь с лучшими результатами!</p>
         </header>
 
         <div id="rating-section">
-            <h2>Top Scores</h2>
+            <h2>Лучший рейтинг!</h2>
             <table>
                 <thead>
                     <tr>
-                        <th>Username</th>
-                        <th>Score</th>
-                        <th>Time</th>
+                        <th>Имя пользователя</th>
+                        <th>Счет</th>
+                        <th>Время</th>
                     </tr>
                 </thead>
                 <tbody id="rating-table">

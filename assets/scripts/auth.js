@@ -82,22 +82,43 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function handleLogin(event) {
         event.preventDefault();
+        
         const username = document.getElementById('username').value;
         const password = document.getElementById('password').value;
-
-        if (username === 'test' && password === 'test') {
+        
+        // Retrieve users from localStorage
+        const storedUsers = localStorage.getItem('users');
+        let confirmUsername = 'test'; // Default username
+        let confirmPassword = 'test'; // Default password
+        
+        if (storedUsers) {
+            try {
+                const parsedUsers = JSON.parse(storedUsers);
+                // Check if the array has at least one user and access its properties
+                if (parsedUsers.length > 0) {
+                    confirmUsername = parsedUsers[0].username || confirmUsername;
+                    confirmPassword = parsedUsers[0].password || confirmPassword;
+                }
+                console.log(confirmUsername, confirmPassword)
+            } catch (error) {
+                console.error('Error parsing stored users:', error);
+            }
+        }
+        
+        // Validate credentials
+        if (username === confirmUsername && password === confirmPassword) {
             localStorage.setItem('username', username);
             localStorage.setItem('isLoggedIn', 'true');
             localStorage.setItem('loginTime', new Date().toISOString());
-
+            
             alert('Login successful!');
-            // Исправляем путь для перенаправления
-            window.location.href = getRedirectPath('index');  // Поднимаемся на уровень выше
+            
+            // Redirect user
+            window.location.href = '../index.html'; // Adjusted for a relative path
         } else {
             alert('Invalid credentials. Please try again.');
         }
     }
-
     function handleRegister(event) {
         event.preventDefault();
         const username = document.getElementById('username').value;
