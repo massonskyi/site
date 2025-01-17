@@ -1220,7 +1220,7 @@ class QuizGame {
       container.insertBefore(questionText, container.firstChild.nextSibling);
     }
   
-    questionTitle.textContent = `Question ${this.currentQuestionIndex + 1}`;
+    questionTitle.textContent = `Вопрос ${this.currentQuestionIndex + 1}`;
     questionText.textContent = currentQuestion.question;
     console.log("Question title and text updated successfully.");
   

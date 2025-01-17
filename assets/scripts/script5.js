@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
             
             // Base coordinates configuration
             this.baseCoordinates = {
-                x: [1723, 1345, 1540, 1474, 1459, 1398, 1704, 1713, 1560, 1503],
+                x: [1723, 1400, 1510, 1474, 1459, 1398, 1704, 1713, 1560, 1503],
                 y: [586, 607, 607, 544, 472, 363, 702, 502, 417, 370],
                 startX: [50, 220, 390, 50, 220, 390, 50, 220, 390, 50],
                 startY: [250, 250, 250, 420, 420, 420, 590, 590, 590, 760],
@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         updateCoordinates() {
             const screenWidth = window.innerWidth;
-            const screenRatio = Math.min(screenWidth / this.BASE_SCREEN_WIDTH, 1.5);
+            const screenRatio = Math.min(screenWidth / this.BASE_SCREEN_WIDTH, 1.2);
             
             this.coordinates = {
                 x: this.baseCoordinates.x.map(x => Math.round(x * screenRatio)),

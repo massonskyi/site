@@ -39,7 +39,9 @@ a {
     justify-content: center;
     align-items: center;
 }
-
+.justify-text {
+    text-align: justify;
+}
 .logo-text {
     font-size: 24px;
     font-weight: bold;

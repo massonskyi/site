@@ -1,15 +1,15 @@
 document.addEventListener('DOMContentLoaded', () => {
     const phrases = [
-        { latin: "Consuetudo est altera natura", translation: "Привычка - вторая натура", category: "philosophy", priority: 1 },
-        { latin: "Nota bene", translation: "Заметьте хорошо!", category: "common", priority: 2 },
-        { latin: "Nulla calamitas sola", translation: "Беда не приходит одна", category: "wisdom", priority: 1 },
-        { latin: "Per aspera ad astra", translation: "Через тернии к звёздам", category: "motivation", priority: 2 },
-        { latin: "Carpe diem", translation: "Лови момент", category: "motivation", priority: 2 },
-        { latin: "Alea iacta est", translation: "Жребий брошен", category: "history", priority: 1 },
-        { latin: "Veni, vidi, vici", translation: "Пришёл, увидел, победил", category: "history", priority: 2 },
-        { latin: "Cogito, ergo sum", translation: "Мыслю, следовательно, существую", category: "philosophy", priority: 2 },
-        { latin: "In vino veritas", translation: "В вине истина", category: "wisdom", priority: 1 },
-        { latin: "Memento mori", translation: "Помни о смерти", category: "philosophy", priority: 1 }
+        { latin: "Consuetudo est altera natura", translation: "Привычка - вторая натура", category: "философия", priority: 1 },
+        { latin: "Nota bene", translation: "Заметьте хорошо!", category: "общий", priority: 2 },
+        { latin: "Nulla calamitas sola", translation: "Беда не приходит одна", category: "мудрость", priority: 1 },
+        { latin: "Per aspera ad astra", translation: "Через тернии к звёздам", category: "мотивация", priority: 2 },
+        { latin: "Carpe diem", translation: "Лови момент", category: "мотивация", priority: 2 },
+        { latin: "Alea iacta est", translation: "Жребий брошен", category: "история", priority: 1 },
+        { latin: "Veni, vidi, vici", translation: "Пришёл, увидел, победил", category: "история", priority: 2 },
+        { latin: "Cogito, ergo sum", translation: "Мыслю, следовательно, существую", category: "философия", priority: 2 },
+        { latin: "In vino veritas", translation: "В вине истина", category: "мудрость", priority: 1 },
+        { latin: "Memento mori", translation: "Помни о смерти", category: "философия", priority: 1 }
     ];
 
     class PhraseGenerator {
@@ -17,10 +17,10 @@ document.addEventListener('DOMContentLoaded', () => {
             this.phrases = phrases;
             this.usedPhrases = new Map();
             this.categories = new Map();
-            this.weights = options.weights || phrases.map(phrase => phrase.priority || 1);
-            this.cooldownPeriod = options.cooldownPeriod || 0;
-            this.maxConsecutiveFromCategory = options.maxConsecutiveFromCategory || Infinity;
-            this.lastCategory = null;
+            this.weights = options.weights || phrases.map(phrase => phrase.priority || 1); // весы определяют приоритет выбора фразы
+            this.cooldownPeriod = options.cooldownPeriod || 0; // время ожидания для одной и той же фразы
+            this.maxConsecutiveFromCategory = options.maxConsecutiveFromCategory || Infinity; // максимальное количество фраз подряд из одной категории
+            this.lastCategory = null; // последняя сгенерированная категория, необходимо для проверки на максимальное количество
             this.consecutiveCategoryCount = 0;
             
             this.validateInput();
