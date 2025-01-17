@@ -17,7 +17,7 @@
     width: 200px;
     height: 300px;
 }
-
+  
 .body {
     position: absolute;
     width: 129px;
@@ -199,6 +199,58 @@
     left: 85px;
 }
 
+/* Анимация для правой руки */
+@keyframes wave {
+    0% {
+      transform: rotate(30deg);
+    }
+    12.5% {
+      transform: rotate(36deg);
+    }
+    25% {
+      transform: rotate(42deg);
+    }
+    37.5% {
+      transform: rotate(45deg);
+    }
+    50% {
+      transform: rotate(48deg);
+    }
+    62.5% {
+      transform: rotate(45deg);
+    }
+    75% {
+      transform: rotate(42deg);
+    }
+    87.5% {
+      transform: rotate(36deg);
+    }
+    100% {
+      transform: rotate(30deg);
+    }
+  }
+  
+  .penguin:hover .right-wing {
+    animation: wave .5s ease-in-out infinite;
+  }
+  @keyframes jump {
+    0%, 100% {
+      transform: translateY(0); /* Исходная позиция */
+    }
+    50% {
+      transform: translateY(-10px); /* Подпрыгнуть вверх на 10px */
+    }
+  }
+  
+  
+  .penguin:hover,
+  .penguin:hover .hat,
+  .penguin:hover .hat-top,
+  .penguin:hover .hat-band,
+  .penguin:hover .hat-ball,
+  .penguin:hover .hat-band-in {
+    animation: jump .5s ease-in-out infinite; /* Анимация подпрыгивания */
+  }
 
 /* Адаптивные стили */
 @media (min-width: 768px) {
