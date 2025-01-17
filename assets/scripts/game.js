@@ -10,6 +10,7 @@ const QUESTION_TYPES = {
   CHOICE: "choice",
   TEXT: "text",
   SORT: "sort",
+  PHRASE: "phrase",
 };
 const heartSvg = `            <svg height="50px" width="50px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
               viewBox="0 0 512.001 512.001" xml:space="preserve">
@@ -114,7 +115,7 @@ class QuestionGenerator {
           {
             type: QUESTION_TYPES.TEXT,
             question: "Какой океан самый большой на Земле?",
-            correctAnswer: "Тихий океан",
+            correctAnswer: "Тихий",
           },
           {
             type: QUESTION_TYPES.TEXT,
@@ -178,6 +179,44 @@ class QuestionGenerator {
               "Суббота",
               "Воскресенье",
             ],
+          },
+        ],
+        phraseQuestions: [
+          {
+            type: QUESTION_TYPES.PHRASE,
+            question: "Составьте фразу из слов: 'собака', 'бегает', 'в', 'парке'",
+            options: ["собака", "бегает", "в", "парке"],
+            correctAnswer: ["собака", "бегает", "в", "парке"],
+          },
+          {
+            type: QUESTION_TYPES.PHRASE,
+            question: "Составьте фразу из слов: 'кот', 'спит', 'на', 'диване'",
+            options: ["кот", "спит", "на", "диване"],
+            correctAnswer: ["кот", "спит", "на", "диване"],
+          },
+          {
+            type: QUESTION_TYPES.PHRASE,
+            question: "Составьте фразу из слов: 'дети', 'играют', 'в', 'песочнице'",
+            options: ["дети", "играют", "в", "песочнице"],
+            correctAnswer: ["дети", "играют", "в", "песочнице"],
+          },
+          {
+            type: QUESTION_TYPES.PHRASE,
+            question: "Составьте фразу из слов: 'птицы', 'поют', 'на', 'деревьях'",
+            options: ["птицы", "поют", "на", "деревьях"],
+            correctAnswer: ["птицы", "поют", "на", "деревьях"],
+          },
+          {
+            type: QUESTION_TYPES.PHRASE,
+            question: "Составьте фразу из слов: 'рыба', 'плавает', 'в', 'реке'",
+            options: ["рыба", "плавает", "в", "реке"],
+            correctAnswer: ["рыба", "плавает", "в", "реке"],
+          },
+          {
+            type: QUESTION_TYPES.PHRASE,
+            question: "Составьте фразу из слов: 'солнце', 'светит', 'ярко', 'в', 'небе'",
+            options: ["солнце", "светит", "ярко", "в", "небе"],
+            correctAnswer: ["солнце", "светит", "ярко", "в", "небе"],
           },
         ],
       },
@@ -306,6 +345,44 @@ class QuestionGenerator {
             question:
               "Отсортируй слова по количеству букв (по возрастанию): книга, стол, дом, шкаф, стул",
             correctAnswer: ["дом", "стул", "стол", "книга", "шкаф"],
+          },
+        ],
+        phraseQuestions: [
+          {
+            type: QUESTION_TYPES.PHRASE,
+            question: "Составьте фразу из слов: 'ученые', 'изучают', 'космос', 'с', 'помощью', 'телескопов'",
+            options: ["ученые", "изучают", "космос", "с", "помощью", "телескопов"],
+            correctAnswer: ["ученые", "изучают", "космос", "с", "помощью", "телескопов"],
+          },
+          {
+            type: QUESTION_TYPES.PHRASE,
+            question: "Составьте фразу из слов: 'музыканты', 'играют', 'на', 'гитарах', 'в', 'парке'",
+            options: ["музыканты", "играют", "на", "гитарах", "в", "парке"],
+            correctAnswer: ["музыканты", "играют", "на", "гитарах", "в", "парке"],
+          },
+          {
+            type: QUESTION_TYPES.PHRASE,
+            question: "Составьте фразу из слов: 'туристы', 'путешествуют', 'по', 'горам', 'с', 'гидом'",
+            options: ["туристы", "путешествуют", "по", "горам", "с", "гидом"],
+            correctAnswer: ["туристы", "путешествуют", "по", "горам", "с", "гидом"],
+          },
+          {
+            type: QUESTION_TYPES.PHRASE,
+            question: "Составьте фразу из слов: 'художники', 'рисуют', 'картины', 'в', 'мастерской', 'с', 'красками'",
+            options: ["художники", "рисуют", "картины", "в", "мастерской", "с", "красками"],
+            correctAnswer: ["художники", "рисуют", "картины", "в", "мастерской", "с", "красками"],
+          },
+          {
+            type: QUESTION_TYPES.PHRASE,
+            question: "Составьте фразу из слов: 'спортсмены', 'тренируются', 'в', 'спортзале', 'с', 'тренером'",
+            options: ["спортсмены", "тренируются", "в", "спортзале", "с", "тренером"],
+            correctAnswer: ["спортсмены", "тренируются", "в", "спортзале", "с", "тренером"],
+          },
+          {
+            type: QUESTION_TYPES.PHRASE,
+            question: "Составьте фразу из слов: 'повара', 'готовят', 'еду', 'в', 'ресторане', 'с', 'ингредиентами'",
+            options: ["повара", "готовят", "еду", "в", "ресторане", "с", "ингредиентами"],
+            correctAnswer: ["повара", "готовят", "еду", "в", "ресторане", "с", "ингредиентами"],
           },
         ],
       },
@@ -458,6 +535,44 @@ class QuestionGenerator {
             correctAnswer: ["гиппопотам", "жираф", "лев", "носорог", "слон"],
           }
         ],
+        phraseQuestions: [
+          {
+            type: QUESTION_TYPES.PHRASE,
+            question: "Составьте фразу из слов: 'астрономы', 'наблюдают', 'за', 'звездами', 'с', 'помощью', 'мощных', 'телескопов'",
+            options: ["астрономы", "наблюдают", "за", "звездами", "с", "помощью", "мощных", "телескопов"],
+            correctAnswer: ["астрономы", "наблюдают", "за", "звездами", "с", "помощью", "мощных", "телескопов"],
+          },
+          {
+            type: QUESTION_TYPES.PHRASE,
+            question: "Составьте фразу из слов: 'биологи', 'изучают', 'клетки', 'под', 'микроскопом', 'в', 'лаборатории'",
+            options: ["биологи", "изучают", "клетки", "под", "микроскопом", "в", "лаборатории"],
+            correctAnswer: ["биологи", "изучают", "клетки", "под", "микроскопом", "в", "лаборатории"],
+          },
+          {
+            type: QUESTION_TYPES.PHRASE,
+            question: "Составьте фразу из слов: 'археологи', 'раскапывают', 'древние', 'артефакты', 'в', 'пустыне', 'с', 'инструментами'",
+            options: ["археологи", "раскапывают", "древние", "артефакты", "в", "пустыне", "с", "инструментами"],
+            correctAnswer: ["археологи", "раскапывают", "древние", "артефакты", "в", "пустыне", "с", "инструментами"],
+          },
+          {
+            type: QUESTION_TYPES.PHRASE,
+            question: "Составьте фразу из слов: 'инженеры', 'разрабатывают', 'новые', 'технологии', 'в', 'лаборатории', 'с', 'командой'",
+            options: ["инженеры", "разрабатывают", "новые", "технологии", "в", "лаборатории", "с", "командой"],
+            correctAnswer: ["инженеры", "разрабатывают", "новые", "технологии", "в", "лаборатории", "с", "командой"],
+          },
+          {
+            type: QUESTION_TYPES.PHRASE,
+            question: "Составьте фразу из слов: 'писатели', 'создают', 'романы', 'в', 'тишине', 'с', 'вдохновением'",
+            options: ["писатели", "создают", "романы", "в", "тишине", "с", "вдохновением"],
+            correctAnswer: ["писатели", "создают", "романы", "в", "тишине", "с", "вдохновением"],
+          },
+          {
+            type: QUESTION_TYPES.PHRASE,
+            question: "Составьте фразу из слов: 'музыканты', 'сочиняют', 'мелодии', 'в', 'студии', 'с', 'инструментами'",
+            options: ["музыканты", "сочиняют", "мелодии", "в", "студии", "с", "инструментами"],
+            correctAnswer: ["музыканты", "сочиняют", "мелодии", "в", "студии", "с", "инструментами"],
+          },
+        ],
       },
     };
 
@@ -468,7 +583,7 @@ class QuestionGenerator {
 class QuizGame {
   constructor() {
     this.levels = [];
-    this.currentLevelIndex = 0;
+    this.currentLevelId = "level-1";
     this.currentQuestionIndex = 0;
     this.score = 0;
     this.timer = null;
@@ -490,6 +605,7 @@ class QuizGame {
     this.circumference = 2 * Math.PI * 90; // Длина окружности
     this.hearts = [];
     this.breakHearts = [];
+
     this.initializeElements();
     this.bindEvents();
     this.addHearts(this.questionDifficulty)
@@ -566,13 +682,21 @@ class QuizGame {
   }
 
   getCurrentLevel() {
-    console.log(this.levels, this.currentLevelIndex);
-    return this.levels[this.currentLevelIndex];
+    console.log("Getting current level:", this.currentLevelId);
+    const currentLevel = this.levels.find(level => level.id === this.currentLevelId);
+    if (!currentLevel) {
+      console.error("Level not found:", this.currentLevelId);
+    }
+    return currentLevel;
   }
-
   getCurrentQuestion() {
-    console.log(this.getCurrentLevel());
-    return this.getCurrentLevel().questions[this.currentQuestionIndex];
+    console.log("Getting current question for level:", this.currentLevelId);
+    const currentLevel = this.getCurrentLevel();
+    if (currentLevel) {
+      return currentLevel.questions[this.currentQuestionIndex];
+    }
+    console.error("Current level not found:", this.currentLevelId);
+    return null;
   }
   // Функция для добавления сердец
   addHearts(level) {
@@ -600,55 +724,56 @@ class QuizGame {
     }, 500);
     this.hearts.pop(heart)
   }
-  getContainerByLevel(level) {
-    return level === 1
-      ? this.elements.optionsContainer
-      : level === 2
-      ? this.elements.dragDropContainer
-      : this.elements.matchContainer;
-  }
 
-  renderChoiceQuestion(question, level) {
-    const container = this.getContainerByLevel(level);
-    container.innerHTML = "";
+  getContainerByLevel(levelId) {
+    const levelNumber = levelId.split('-')[1];
+    const container = document.getElementById(`question-container-${levelNumber}`);
+    if (!container) {
+      console.error("Container not found for level:", levelId);
+    }
+    return container;
+  }
+  
+  renderChoiceQuestion(question, answerContainer) {
     question.options.forEach((option) => {
       const optionElement = document.createElement("div");
       optionElement.classList.add("quiz-option");
       optionElement.textContent = option;
       optionElement.dataset.answer = option;
       optionElement.addEventListener("click", () => this.checkAnswer(option));
-      container.appendChild(optionElement);
+      answerContainer.appendChild(optionElement);
     });
   }
 
-  renderTextQuestion(question, level) {
-    const container = this.getContainerByLevel(level);
-    container.innerHTML = "";
+  renderTextQuestion(question, answerContainer) {
     const inputElement = document.createElement("input");
     inputElement.type = "text";
     inputElement.className = "quiz-input";
     inputElement.placeholder = "Введите ваш ответ";
-    container.appendChild(inputElement);
-
+    inputElement.addEventListener("keydown", (event) => {
+      if (event.key === "Enter") {
+        this.checkAnswer(inputElement.value);
+      }
+    });
+    answerContainer.appendChild(inputElement);
+  
     const checkButton = document.createElement("button");
     checkButton.textContent = "Проверить";
     checkButton.className = "check-button";
     checkButton.addEventListener("click", () => {
-        this.checkAnswer(inputElement.value);
+      this.checkAnswer(inputElement.value);
     });
-    container.appendChild(checkButton);
+    answerContainer.appendChild(checkButton);
   }
 
-  renderSortQuestion(question, level) {
-    const container = this.getContainerByLevel(level);
-    container.innerHTML = "";
+  renderSortQuestion(question, answerContainer) {
     const sortableContainer = document.createElement("div");
     sortableContainer.classList.add("sort-container");
-
+  
     const shuffled = [...question.correctAnswer].sort(
       () => Math.random() - 0.5
     );
-
+  
     shuffled.forEach((item) => {
       const itemElement = document.createElement("div");
       itemElement.classList.add("sort-item");
@@ -663,26 +788,26 @@ class QuizGame {
       });
       sortableContainer.appendChild(itemElement);
     });
-
+  
     sortableContainer.addEventListener("dragover", (event) => {
       event.preventDefault();
-      const dragging = container.querySelector(".dragging");
+      const dragging = sortableContainer.querySelector(".dragging");
       const siblings = [
-        ...container.querySelectorAll(".sort-item:not(.dragging)"),
+        ...sortableContainer.querySelectorAll(".sort-item:not(.dragging)"),
       ];
-
+  
       const nextSibling = siblings.find((sibling) => {
         const box = sibling.getBoundingClientRect();
         return event.clientY < box.top + box.height / 2;
       });
-
+  
       if (nextSibling) {
         sortableContainer.insertBefore(dragging, nextSibling);
       } else {
         sortableContainer.appendChild(dragging);
       }
     });
-
+  
     const checkButton = document.createElement("button");
     checkButton.textContent = "Check Order";
     checkButton.className = "check-button";
@@ -692,17 +817,70 @@ class QuizGame {
       ].map((item) => item.textContent);
       this.checkAnswer(currentOrder);
     });
-
-    container.appendChild(sortableContainer);
-    container.appendChild(checkButton);
+  
+    answerContainer.appendChild(sortableContainer);
+    answerContainer.appendChild(checkButton);
   }
 
+  renderPhraseQuestion(question, answerContainer) {
+    const phraseContainer = document.createElement("div");
+    phraseContainer.classList.add("phrase-container");
+  
+    const shuffled = [...question.options].sort(() => Math.random() - 0.5);
+  
+    shuffled.forEach((word) => {
+      const wordElement = document.createElement("div");
+      wordElement.classList.add("phrase-word");
+      wordElement.textContent = word;
+      wordElement.draggable = true;
+      wordElement.addEventListener("dragstart", (event) => {
+        event.dataTransfer.setData("text", word);
+        wordElement.classList.add("dragging");
+      });
+      wordElement.addEventListener("dragend", () => {
+        wordElement.classList.remove("dragging");
+      });
+      phraseContainer.appendChild(wordElement);
+    });
+  
+    phraseContainer.addEventListener("dragover", (event) => {
+      event.preventDefault();
+      const dragging = phraseContainer.querySelector(".dragging");
+      const siblings = [
+        ...phraseContainer.querySelectorAll(".phrase-word:not(.dragging)"),
+      ];
+  
+      const nextSibling = siblings.find((sibling) => {
+        const box = sibling.getBoundingClientRect();
+        return event.clientY < box.top + box.height / 2;
+      });
+  
+      if (nextSibling) {
+        phraseContainer.insertBefore(dragging, nextSibling);
+      } else {
+        phraseContainer.appendChild(dragging);
+      }
+    });
+  
+    const checkButton = document.createElement("button");
+    checkButton.textContent = "Проверить";
+    checkButton.className = "check-button";
+    checkButton.addEventListener("click", () => {
+      const currentOrder = [
+        ...phraseContainer.querySelectorAll(".phrase-word"),
+      ].map((item) => item.textContent);
+      this.checkAnswer(currentOrder);
+    });
+  
+    answerContainer.appendChild(phraseContainer);
+    answerContainer.appendChild(checkButton);
+  }
   checkAnswer(userAnswer) {
     const currentQuestion = this.getCurrentQuestion();
     let isCorrect = false;
     this.lastUserAnswer = userAnswer;
 
-    if (currentQuestion.type === QUESTION_TYPES.SORT) {
+    if (currentQuestion.type === QUESTION_TYPES.SORT || currentQuestion.type === QUESTION_TYPES.PHRASE) {
       isCorrect =
         JSON.stringify(userAnswer) ===
         JSON.stringify(currentQuestion.correctAnswer);
@@ -710,7 +888,6 @@ class QuizGame {
       isCorrect =
         String(userAnswer).toLowerCase().trim() ===
         String(currentQuestion.correctAnswer).toLowerCase().trim();
-        console.log(String(userAnswer).toLowerCase().trim() + " | "+ String(currentQuestion.correctAnswer).toLowerCase().trim())
     }
 
     this.handleAnswer(isCorrect);
@@ -721,12 +898,14 @@ class QuizGame {
     const feedback = document.createElement("div");
     feedback.className = `feedback ${isCorrect ? "correct" : "incorrect"}`;
     feedback.textContent = isCorrect ? "Верно подметил!" : "Ошибся? бывает!";
-
-    const currentContainer =
-      this.elements.questionContainers[`level${this.currentLevelIndex + 1}`];
-    currentContainer.appendChild(feedback);
-
-    setTimeout(() => feedback.remove(), 2000);
+  
+    const currentContainer = this.getContainerByLevel(this.currentLevelId);
+    if (currentContainer) {
+      currentContainer.appendChild(feedback);
+      setTimeout(() => feedback.remove(), 2000);
+    } else {
+      console.error("Current question container not found:", this.currentLevelId);
+    }
   }
 
   handleDrop(event) {
@@ -837,21 +1016,22 @@ class QuizGame {
       userAnswer: this.lastUserAnswer,
       correctAnswer: this.getCurrentQuestion().correctAnswer,
     });
-
+  
     if (isCorrect) {
       this.score = this.questionDifficulty === DIFFICULTY_LEVELS.EASY ? this.score + 1
-      : this.questionDifficulty === DIFFICULTY_LEVELS.MEDIUM ? this.score + 5 
-      : this.score + 15
-    }else{
-      console.log('failted')
+        : this.questionDifficulty === DIFFICULTY_LEVELS.MEDIUM ? this.score + 5
+        : this.score + 15;
+    } else {
+      console.log('failed');
       this.animateHeart(this.hearts[this.hearts.length - 1]);
       if (this.hearts.every(heart => heart.classList.contains('empty'))) {
-          this.finishGame();
+        this.finishGame();
       }
     }
+  
     this.currentQuestionIndex++;
     if (this.currentQuestionIndex < this.getCurrentLevel().questions.length) {
-      this.displayQuestion(this.currentLevelIndex + 1);
+      this.displayQuestion(this.currentLevelId);
       this.startTimer();
     } else {
       this.displayLevelSummary();
@@ -860,97 +1040,115 @@ class QuizGame {
 
   displayLevelSummary() {
     this.stopTimer();
-    this.levelResults[this.currentLevelIndex] = {
-      answers: this.currentLevelAnswers,
-      score: this.currentLevelAnswers.filter((a) => a.correct).length,
-      total: this.currentLevelAnswers.length,
+    this.levelResults[this.currentLevelId] = {
+        answers: this.currentLevelAnswers,
+        score: this.currentLevelAnswers.filter((a) => a.correct).length,
+        total: this.currentLevelAnswers.length,
     };
 
     // Hide all question containers
     Object.values(this.elements.questionContainers).forEach((container) => {
-      if (container) container.style.display = "none";
+        if (container) container.style.display = "none";
     });
 
     // Get the summary container
     const summaryContainer = document.getElementById("level-summary");
 
     // Update summary content
-    document.getElementById("summary-level-title").textContent = `Level ${
-      this.currentLevelIndex + 1
-    } Complete!`;
-    document.getElementById(
-      "summary-level-score"
-    ).textContent = `Level Score: ${
-      this.levelResults[this.currentLevelIndex].score
-    } / ${this.levelResults[this.currentLevelIndex].total}`;
-    document.getElementById(
-      "summary-total-score"
-    ).textContent = `Total Score: ${this.score}`;
+    document.getElementById("summary-level-title").textContent = 
+        `Level ${this.currentLevelId.split('-')[1]} Complete!`;
+    document.getElementById("summary-level-score").textContent = 
+        `Level Score: ${this.levelResults[this.currentLevelId].score} / ${this.levelResults[this.currentLevelId].total}`;
+    document.getElementById("summary-total-score").textContent = 
+        `Total Score: ${this.score}`;
 
     // Generate answers table content
     const answersHTML = this.currentLevelAnswers
-      .map(
-        (answer) => `
-        <tr class="${answer.correct ? "correct-answer" : "wrong-answer"}">
-            <td>${answer.question}</td>
-            <td>${
-              Array.isArray(answer.userAnswer)
-                ? answer.userAnswer.join(", ")
-                : answer.userAnswer
-            }</td>
-            <td>${
-              Array.isArray(answer.correctAnswer)
-                ? answer.correctAnswer.join(", ")
-                : answer.correctAnswer
-            }</td>
-            <td>${answer.correct ? "✓" : "✗"}</td>
-        </tr>
-    `
-      )
-      .join("");
+        .map(
+            (answer) => `
+                <tr class="${answer.correct ? "correct-answer" : "wrong-answer"}">
+                    <td>${answer.question}</td>
+                    <td>${Array.isArray(answer.userAnswer) ? answer.userAnswer.join(", ") : answer.userAnswer}</td>
+                    <td>${Array.isArray(answer.correctAnswer) ? answer.correctAnswer.join(", ") : answer.correctAnswer}</td>
+                    <td>${answer.correct ? "✓" : "✗"}</td>
+                </tr>
+            `
+        )
+        .join("");
     document.getElementById("summary-answers").innerHTML = answersHTML;
 
-    // Update button
+    // Get button container and remove existing event listeners
     const buttonContainer = document.getElementById("summary-button-container");
-    if (!this.isLastLevel) {
-      buttonContainer.innerHTML = `
+    const newButtonContainer = buttonContainer.cloneNode(true);
+    buttonContainer.parentNode.replaceChild(newButtonContainer, buttonContainer);
+
+    if (this.currentLevelId !== "level-4") {
+        const nextLevelNumber = parseInt(this.currentLevelId.split('-')[1]) + 1;
+        newButtonContainer.innerHTML = `
             <button class="next-level-btn">
-                Перейти на следующий уровень № ${this.currentLevelIndex + 2}
+                Перейти на следующий уровень № ${nextLevelNumber}
             </button>
         `;
-      buttonContainer.addEventListener("click", () => {
-        this.startNextLevel();
-        summaryContainer.style.display = "none";
-        this.startTimer()
-        console.log(2);
-      });
+
+        // Add single event listener with cleanup
+        const nextLevelButton = newButtonContainer.querySelector('.next-level-btn');
+        const handleNextLevel = () => {
+            // Remove the event listener immediately to prevent multiple triggers
+            nextLevelButton.removeEventListener('click', handleNextLevel);
+            
+            // Start next level
+            this.startNextLevel();
+            
+            // Hide summary container
+            summaryContainer.style.display = "none";
+            
+            // Start timer for next level
+            this.startTimer();
+        };
+
+        nextLevelButton.addEventListener('click', handleNextLevel, { once: true });
     } else {
-      buttonContainer.innerHTML = `
-            <button class="finish-game-btn" onclick="finishGame()">
+        newButtonContainer.innerHTML = `
+            <button class="finish-game-btn">
                 Закончить игру
             </button>
         `;
 
-      buttonContainer.addEventListener("click", () => {
-        this.finishGame();
-        summaryContainer.style.display = "none";
-        console.log(1);
-      });
+        const finishButton = newButtonContainer.querySelector('.finish-game-btn');
+        const handleFinish = () => {
+            finishButton.removeEventListener('click', handleFinish);
+            this.finishGame();
+            summaryContainer.style.display = "none";
+        };
+
+        finishButton.addEventListener('click', handleFinish, { once: true });
     }
 
-    // Show summary
+    // Show summary container
     summaryContainer.style.display = "block";
 
     // Reset current level answers for next level
     this.currentLevelAnswers = [];
-  }
+
+    // Log current state for debugging
+    console.log('Level Summary displayed:', {
+        currentLevel: this.currentLevelId,
+        totalScore: this.score,
+        levelResults: this.levelResults[this.currentLevelId]
+    });
+}
+  
+  
+  
   startNextLevel() {
     this.currentQuestionIndex = 0;
-    this.currentLevelIndex++;
-    if (this.currentLevelIndex <= this.levels.length) {
-      this.displayLevel();
-    }else{
+    const currentLevelNumber = parseInt(this.currentLevelId.split('-')[1]);
+    this.currentLevelId = `level-${currentLevelNumber + 1}`;
+    console.log("Moving to next level:", this.currentLevelId);
+    if (this.currentLevelId === "level-5") {
       this.finishGame();
+    } else {
+      this.displayLevel();
     }
   }
 
@@ -960,7 +1158,7 @@ class QuizGame {
   }
 
   restart() {
-    this.currentLevelIndex = 0;
+    this.currentLevelId = "level-1";
     this.currentQuestionIndex = 0;
     this.score = 0;
     this.startTime = Date.now();
@@ -970,71 +1168,91 @@ class QuizGame {
     this.addHearts(this.questionDifficulty)
     this.startTimer();
   }
-
   displayLevel() {
-    if(this.currentLevelIndex > 2) { // Один из самых жестких костылей в моей жизни :)
-      this.currentLevelIndex=2
-      this.isLastLevel=true; // ладно, этот самый жесткий
-    }
-
-    console.log("Displaying level:", this.currentLevelIndex + 1);
-
+    console.log("Displaying level:", this.currentLevelId);
+  
     // Скрываем все контейнеры вопросов
-    for (let i = 1; i <= 3; i++) {
+    for (let i = 1; i <= 4; i++) {
       const container = document.getElementById(`question-container-${i}`);
       if (container) {
         container.style.display = "none";
       }
     }
-
+  
     // Показываем только текущий контейнер
-    const currentContainer = document.getElementById(
-      `question-container-${this.currentLevelIndex + 1}`
-    );
+    const currentContainer = this.getContainerByLevel(this.currentLevelId);
     if (currentContainer) {
       currentContainer.style.display = "block";
-      this.displayQuestion(this.currentLevelIndex + 1);
+      this.displayQuestion(this.currentLevelId);
     } else {
-      console.error(
-        "Current question container not found:",
-        this.currentLevelIndex + 1
-      );
+      console.error("Current question container not found:", this.currentLevelId);
     }
   }
+  
 
-  displayQuestion(level) {
-    console.log("Displaying question for level:", level);
+  displayQuestion(levelId) {
+    console.log("Displaying question for level:", levelId);
     const currentQuestion = this.getCurrentQuestion();
     console.log("Current question:", currentQuestion);
-
+  
     if (!currentQuestion) {
-      console.error("No question found for level:", level);
+      console.error("No question found for level:", levelId);
       return;
     }
-
-    const container = document.getElementById(`question-container-${level}`);
+  
+    const container = this.getContainerByLevel(levelId);
     if (!container) {
-      console.error("Container not found for level:", level);
+      console.error("Container not found for level:", levelId);
       return;
     }
-
-    // Обновляем заголовок и текст вопроса
-    const questionTitle = container.querySelector("h3");
-    const questionText = container.querySelector("p");
-
-    if (questionTitle && questionText) {
-      questionTitle.textContent = `Question ${this.currentQuestionIndex + 1}`;
-      questionText.textContent = currentQuestion.question;
+  
+    // Создаем или обновляем заголовок и текст вопроса
+    let questionTitle = container.querySelector("h3");
+    let questionText = container.querySelector("p");
+  
+    if (!questionTitle) {
+      questionTitle = document.createElement("h3");
+      container.insertBefore(questionTitle, container.firstChild);
     }
-
+  
+    if (!questionText) {
+      questionText = document.createElement("p");
+      container.insertBefore(questionText, container.firstChild.nextSibling);
+    }
+  
+    questionTitle.textContent = `Question ${this.currentQuestionIndex + 1}`;
+    questionText.textContent = currentQuestion.question;
+    console.log("Question title and text updated successfully.");
+  
+    // Создаем или обновляем контейнер для ответов
+    let answerContainer = document.getElementById(`question-container-answer-${levelId.split('-')[1]}`);
+    if (!answerContainer) {
+      answerContainer = document.createElement("div");
+      answerContainer.id = `question-container-answer-${levelId.split('-')[1]}`;
+      container.appendChild(answerContainer);
+    }
+  
+    // Очищаем предыдущие ответы
+    answerContainer.innerHTML = "";
+  
     // Отображаем варианты ответа в зависимости от типа вопроса
     if (currentQuestion.type === QUESTION_TYPES.CHOICE) {
-      this.renderChoiceQuestion(currentQuestion, level);
+      this.renderChoiceQuestion(currentQuestion, answerContainer);
     } else if (currentQuestion.type === QUESTION_TYPES.TEXT) {
-      this.renderTextQuestion(currentQuestion, level);
+      this.renderTextQuestion(currentQuestion, answerContainer);
     } else if (currentQuestion.type === QUESTION_TYPES.SORT) {
-      this.renderSortQuestion(currentQuestion, level);
+      this.renderSortQuestion(currentQuestion, answerContainer);
+    } else if (currentQuestion.type === QUESTION_TYPES.PHRASE) {
+      this.renderPhraseQuestion(currentQuestion, answerContainer);
     }
+  }
+  
+  shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
   }
   generateLevels() {
     console.log("Generating levels with difficulty:", this.questionDifficulty);
@@ -1042,42 +1260,44 @@ class QuizGame {
       this.questionDifficulty
     );
     console.log("Generated questions:", questions);
-
+  
     const allChoiceQuestions = questions.choiceQuestions || [];
     const allTextQuestions = questions.textQuestions || [];
     const allSortingQuestions = questions.sortingQuestions || [];
-
+    const allPhraseQuestions = questions.phraseQuestions || [];
+  
     const allQuestions = [
+      ...allPhraseQuestions,
       ...allChoiceQuestions,
       ...allTextQuestions,
       ...allSortingQuestions,
     ];
-
-    const totalQuestions = allQuestions.length;
+    const shuffledQuestions = this.shuffleArray(allQuestions);
+    const totalQuestions = shuffledQuestions.length;
     const questionsPerLevel = 6;
-
-    if (totalQuestions < 3 * questionsPerLevel) {
+  
+    if (totalQuestions < 4 * questionsPerLevel) {
       console.warn("Not enough questions to fully populate all levels.");
     }
-
-    this.levels = ["level-1", "level-2", "level-3"].map((id, index) => {
+  
+    this.levels = ["level-1", "level-2", "level-3", "level-4"].map((id, index) => {
       const startIndex = index * questionsPerLevel;
       const endIndex = startIndex + questionsPerLevel;
-
-      const levelQuestions = allQuestions.slice(startIndex, endIndex);
-
+  
+      const levelQuestions = shuffledQuestions.slice(startIndex, endIndex);
+  
       // Add any leftover questions to the last level
-      if (index === 2) {
-        levelQuestions.push(...allQuestions.slice(endIndex));
+      if (index === 3) {
+        levelQuestions.push(...shuffledQuestions.slice(endIndex));
       }
-
+  
       console.log(`Level ${index + 1} questions:`, levelQuestions);
       return {
         id,
         questions: levelQuestions,
       };
     });
-
+  
     // Ensure each level has questions
     this.levels.forEach((level, index) => {
       if (level.questions.length === 0) {

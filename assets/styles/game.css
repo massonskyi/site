@@ -267,17 +267,38 @@ button:hover {
     flex-direction: column;
     gap: 5px;
 }
-
+.phrase-container{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: space-around;
+    align-items: stretch;
+}
 .sort-item {
     padding: 10px;
     margin: 5px 0;
     border: 1px solid #ccc;
     border-radius: 5px;
-    cursor: grab;
-    background-color: #f9f9f9;
+    cursor: pointer;
+}
+.phrase-word{
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+
+}
+.phrase-word:hover,
+.sort-item: hover{
+    background-color: var(  --game-text-background-color-hover);
+    color: var(--game-text-color-hover);
 }
 
-.sort-item.dragging {
+.sort-item.dragging,
+.phrase-word.dragging {
     opacity: 0.5;
 }
 
