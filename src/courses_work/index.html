@@ -11,13 +11,13 @@
 <body>
     <nav>
         <ul>
-            <li><a href="../../index.html">Home</a></li>
-            <li><a href="pages/rating.html" style="display: none;">Rating</a></li>
-            <li><a href="pages/login.html">Login</a></li>
-            <li><a href="pages/register.html">Register</a></li>
+            <li><a href="../../index.html">Вернутся на главную</a></li>
+            <li><a href="pages/rating.html" style="display: none;">Рейтинг</a></li>
+            <li><a href="pages/login.html">Вход</a></li>
+            <li><a href="pages/register.html">Регистрация</a></li>
             <li>
                 <select id="theme-selector" onchange="changeTheme()">
-                    <option value="default">Default</option>
+                    <option value="default">Стандартная тема</option>
                     <option value="one-dark">One Dark</option>
                     <option value="atom">Atom</option>
                     <option value="vscode">VSCode</option>
@@ -28,30 +28,32 @@
     </nav>
     <main>
         <section>
-            <h1>Welcome to the Game App</h1>
-            <p>Test your knowledge and skills in our exciting game!</p>
+            <h1>Добро пожаловать в игровое приложение-викторину </h1>
+            <h2>"Кто хочет стать круглионером"</h2>
+            <p>Проверьте свои знания и умения в нашей увлекательной игре!</p>
         </section>
 
         <section id="game-description">
-            <h2>About the Game</h2>
-            <p>Our game is designed to challenge your knowledge and skills through various levels of increasing difficulty. Each level presents a unique set of questions and tasks that you need to complete to advance. The game features dynamic question generation, random element placement, and a variety of interaction types to keep you engaged.</p>
+            <h2>Об игре</h2>
+            <p>Наша игра предназначена для того, чтобы проверить ваши знания и навыки на различных уровнях возрастающей сложности. На каждом уровне представлен уникальный набор вопросов и заданий, которые вам необходимо выполнить, чтобы продвинуться вперед. В игре есть динамическая генерация вопросов, случайное размещение элементов и различные типы взаимодействия, которые помогут вам занять время.</p>
         </section>
 
         <section id="instructions">
-            <h2>How to Play</h2>
+            <h2>Как играть</h2>
             <ol>
-                <li>Enter your name to start the game.</li>
-                <li>Complete each level by answering the questions correctly.</li>
-                <li>You can exit the level at any time, but you must complete the current level to advance to the next one.</li>
-                <li>Your score will be calculated based on your performance, and you can see your ranking on the rating page.</li>
-                <li>You can restart the game at any time, possibly with a new name.</li>
+                <li>Войдите или создайте новый аккаунт</li>
+                <li>Введите свое имя, чтобы начать игру.</li>
+                <li>Пройдите каждый уровень, правильно ответив на вопросы.</li>
+                <li>Вы можете выйти из уровня в любое время, но вы должны пройти текущий уровень, чтобы перейти к следующему.</li>
+                <li>Ваш балл будет рассчитан на основе вашей успеваемости, и вы сможете увидеть свой рейтинг на странице рейтинга.</li>
+                <li>Вы можете перезапустить игру в любое время, возможно, под новым именем.</li>
             </ol>
         </section>
 
         <section id="start-game">
-            <h2>Start the Game</h2>
+            <h2>Начать игру</h2>
             <form id="name-form" onsubmit="return false;">
-                <label for="player-name">Enter your name</label>
+                <label for="player-name">Ваше имя:</label>
                 <input 
                     type="text" 
                     id="player-name" 
@@ -59,36 +61,44 @@
                     required
                     autocomplete="off"
                     placeholder="Your game nickname">
-                <button type="submit" id="startButton">Start Game</button>
+                <button type="submit" id="startButton">Начать!</button>
             </form>
         </section>
         <section id="developers">
-            <h2>About the Developers</h2>
-            <p>This game was developed by a team of passionate developers who love creating engaging and educational experiences. We hope you enjoy playing as much as we enjoyed making it!</p>
+            <h2>О разработчиках</h2>
+            <p>Эта игра была разработана одним увлеченным разработчиком, который любит создавать увлекательные и познавательные игры. Он надеется, что вам понравится играть так же, как нам понравилось ее создавать!</p>
         </section>
 
         <section class="quote-block">
-            <h2>Inspirational Quote</h2>
-            <p>"The only way to do great work is to love what you do."</p>
+            <h2>Вдохновляющая цитата</h2>
+            <p>"Единственный способ добиться успеха в работе - это любить то, что ты делаешь".</p>
             <p class="author">- Steve Jobs</p>
         </section>
 
         <section class="image-block">
-            <h2>Game Screenshots</h2>
+            <h2>Игровые скриншоты</h2>
             <img src="../../assets/img/screenshot1.jpg" alt="Screenshot 1">
             <img src="../../assets/img/screenshot2.jpg" alt="Screenshot 2">
             <img src="../../assets/img/screenshot3.jpg" alt="Screenshot 3">
         </section>
 
         <section class="review-block">
-            <h2>Player Reviews</h2>
+            <h2>Отзывы игроков</h2>
             <div class="review">
-                <p>"This game is amazing! I can't stop playing it."</p>
-                <p class="reviewer">- John Doe</p>
+                <p>"Да как поменять имя в этой игре?!"</p>
+                <p class="reviewer">- ghfhrhshgf</p>
             </div>
             <div class="review">
-                <p>"The questions are challenging but fun. Highly recommend!"</p>
-                <p class="reviewer">- Jane Smith</p>
+                <p>"Завершил свою первую игру за 1788694943 секунд! А вам слабо?!"</p>
+                <p class="reviewer">- speedman</p>
+            </div>
+            <div class="review">
+                <p>"Очень хорошая и интересная игра! Особенно когда после 1 левела появляется пустая страница! Меня предупредили что это сложный уровень, но я не думал что настолько"</p>
+                <p class="reviewer">- Хардкорщик2040</p>
+            </div>
+            <div class="review">
+                <p>"Я как опытный программист сразу вижу где тут накостылили в индексациях!"</p>
+                <p class="reviewer">- Трупрограммер2016</p>
             </div>
         </section>
     </main>

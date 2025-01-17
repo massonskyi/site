@@ -1,5 +1,7 @@
-#phrase-container {
+main{
     height: 90vh;
+}
+#phrase-container {
     margin: 20px;
 }
 

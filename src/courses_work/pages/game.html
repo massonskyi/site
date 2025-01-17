@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,87 +9,21 @@
     <link rel="stylesheet" href="../../../assets/styles/game.css">
     <link rel="stylesheet" href="../../../assets/styles/navbar.css">
     <link rel="stylesheet" href="../../../assets/styles/footer.css">
-    <style>
-        .quiz-option {
-            padding: 10px;
-            margin: 5px 0;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            cursor: pointer;
-        }
 
-        .quiz-option:hover {
-            background-color: #f0f0f0;
-        }
-
-        .quiz-input {
-            width: 100%;
-            padding: 10px;
-            margin: 5px 0;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-
-        .sort-container {
-            display: flex;
-            flex-direction: column;
-            gap: 5px;
-        }
-
-        .sort-item {
-            padding: 10px;
-            margin: 5px 0;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            cursor: grab;
-            background-color: #f9f9f9;
-        }
-
-        .sort-item.dragging {
-            opacity: 0.5;
-        }
-
-        .check-button {
-            margin-top: 10px;
-            padding: 10px 20px;
-            background-color: #007BFF;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        .check-button:hover {
-            background-color: #0056b3;
-        }
-
-        .feedback {
-            margin-top: 10px;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-
-        .feedback.correct {
-            background-color: #d4edda;
-            color: #008000;
-        }
-
-        .feedback.incorrect {
-            background-color: #f8d7da;
-            color: #ff0000;
-        }
-    </style>
 </head>
+
 <body>
     <nav>
         <ul>
-            <li><a href="../index.html">Home</a></li>
-            <li><a href="game.html">Play Game</a></li>
-            <li><a href="rating.html">Rating</a></li>
+            <li><a href="../index.html">Вернуться</a></li>
+            <li><a href="game.html">Сыграть снова!</a></li>
+            <li><a href="rating.html">Рейтинг</a></li>
+            <li>            <!-- Кнопка для открытия/закрытия блока настроек -->
+                <a id="settings-toggle">Настройки</a>
+            </li>
             <li>
                 <select id="theme-selector" onchange="changeTheme()">
-                    <option value="default">Default</option>
+                    <option value="default">Стандартная тема</option>
                     <option value="one-dark">One Dark</option>
                     <option value="atom">Atom</option>
                     <option value="vscode">VSCode</option>
@@ -99,41 +34,94 @@
     </nav>
     <main>
         <header>
-            <h1>Game</h1>
-            <p>Welcome to the game! Answer the questions to advance through the levels.</p>
+            <h1>Игра!</h1>
+            <p>Добро пожаловать в игру! Отвечайте на вопросы, чтобы продвигаться по уровням.</p>
         </header>
+        <div class="main-content">
+        <div class="tools">
+            <!-- Таймер -->
+            <div class="tooltip">
+                <svg id="timer" width="150" height="150" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Круг фона -->
+                    <circle cx="100" cy="100" r="90" stroke="gray" stroke-width="10" fill="none" />
+                    <!-- Круг, который будет заполняться в зависимости от времени -->
+                    <circle id="progress-circle" cx="100" cy="100" r="90" stroke="green" stroke-width="10" fill="none"
+                        stroke-dasharray="565.48" stroke-dashoffset="0" transform="rotate(-90 100 100)" />
+                    <!-- Текст для отображения времени -->
+                    <text id="timer-text" class="timer-text" x="50%" y="50%" font-size="30" text-anchor="middle" dy="10">00:00</text>
+                </svg>
+                <span class="tooltiptext">Время бежит и мы не можем его контролировать или все таки можем?</span>
+            </div>
 
-        <div id="level-container">
-            <!-- Level 1 - видимый по умолчанию -->
-            <div id="question-container-1">
-                <h3></h3>
-                <p></p>
-                <div id="options-container-1"></div>
-                <button id="next-button-1" style="display: none;">Next</button>
-            </div>
-        
-            <!-- Level 2 - скрытый -->
-            <div id="question-container-2" style="display: none;">
-                <h3></h3>
-                <p></p>
-                <div id="drag-drop-container-2"></div>
-                <div id="drop-zone-2"></div>
-                <button id="next-button-2" style="display: none;">Next</button>
-            </div>
-        
-            <!-- Level 3 - скрытый -->
-            <div id="question-container-3" style="display: none;">
-                <h3></h3>
-                <p></p>
-                <div id="match-container-3"></div>
-                <button id="next-button-3" style="display: none;">Next</button>
+            <div class="tooltip">
+                <div class="heart-container" id="heart-container"></div>    
+                <!-- Сердца будут добавлены здесь с помощью JavaScript -->
+                <span class="tooltiptext">Это ваши сердечки, берегите их иначе проиграете :(</span>
             </div>
         </div>
+        <div id="level-container">
+            <div id="question-container-1">
+                <h3>Question Title</h3>
+                <p>Question Text</p>
+                <div id="question-container-answer-1"></div>
+                <div id="options-container-1"></div>
+              </div>
+              
+              <div id="question-container-2" style="display: none;">
+                <h3>Question Title</h3>
+                <p>Question Text</p>
+                <div id="question-container-answer-2"></div>
+                <div id="drag-drop-container-2"></div>
+                <div id="drop-zone-2"></div>
+              </div>
+              
+              <div id="question-container-3" style="display: none;">
+                <h3>Question Title</h3>
+                <p>Question Text</p>
+                <div id="question-container-answer-3"></div>
+                <div id="match-container-3"></div>
+              </div>
+
+              <div id="question-container-4" style="display: none;">
+                <h3>Question Title</h3>
+                <p>Question Text</p>
+                <div id="question-container-answer-4"></div>
+                <div id="drag-drop-container-4"></div>
+                <div id="drop-zone-4"></div>
+                <div id="phrase-container-4"></div>
+              </div>
+        </div>
+
+        <div id="level-summary" style="display: none;">
+            <div class="level-summary">
+                <h2 id="summary-level-title"></h2>
+                <div class="summary-stats">
+                    <p id="summary-level-score"></p>
+                    <p id="summary-total-score"></p>
+                </div>
+                <div class="answers-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Вопрос</th>
+                                <th>Ваш ответ</th>
+                                <th>Верный ответ</th>
+                                <th>Результат</th>
+                            </tr>
+                        </thead>
+                        <tbody id="summary-answers">
+                        </tbody>
+                    </table>
+                </div>
+                <div id="summary-button-container"></div>
+            </div>
+        </div>
+    </div>
     </main>
     <!-- Блок настроек -->
     <div class="settings-block" id="settings-block">
-        <h3>Settings</h3>
-        <label for="time-per-question">Time per question (seconds):</label>
+        <h3>Настройки</h3>
+        <label for="time-per-question">Время на вопрос (секунды):</label>
         <select id="time-per-question">
             <option value="5">5</option>
             <option value="10">10</option>
@@ -142,19 +130,15 @@
             <option value="45">45</option>
             <option value="60">60</option>
         </select>
-        <label for="question-difficulty">Question difficulty:</label>
+        <label for="question-difficulty">Сложность:</label>
         <select id="question-difficulty">
-            <option value="easy" selected>Easy</option>
-            <option value="medium">Medium</option>
-            <option value="hard">Hard</option>
+            <option value="easy" selected>Легче простого, даже ребенок справится</option>
+            <option value="medium">Средняя, ну тут и так и сяк</option>
+            <option value="hard">Сложная? Ты уверен, что осилишь?</option>
         </select>
-        <button id="save-settings">Save Settings</button>
+        <button id="save-settings">Сохранить</button>
     </div>
-    <!-- Кнопка для открытия/закрытия блока настроек -->
-    <button class="settings-toggle" id="settings-toggle">Settings</button>
 
-    <!-- Таймер -->
-    <div class="timer" id="timer">Time left: </div>
 
     <footer>
         <p>&copy; 2025 Game App. All rights reserved.</p>
@@ -193,6 +177,8 @@
             settingsBlock.classList.remove('open');
         });
         window.addEventListener('load', applySavedTheme);
+
     </script>
 </body>
+
 </html>
