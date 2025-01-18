@@ -972,7 +972,7 @@ class QuizGame {
   stopTimer() {
     clearInterval(this.timer);
     this.timer = null;
-    this.elements.timer.textContent = getSecondsText(this.timePerQuestion);
+    this.elements.timer.textContent = this.getSecondsText(this.timePerQuestion);
     this.elements.progressCircle.style.strokeDashoffset = '0';
   }
 
