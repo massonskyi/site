@@ -10,148 +10,410 @@
     <!-- Header -->
     <header class="site-header">
       <div class="logo">
-        <div class="circle-logo">
-          <span class="logo-text">S</span>
-        </div>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400">
+          <!-- S from Circle - Smooth morphing -->
+          <g transform="translate(225, 200) scale(1.5)">
+            <path stroke="#FF6B6B" stroke-width="6" fill="none">
+              <animate
+                attributeName="d"
+                dur="6s"
+                repeatCount="indefinite"
+                values="
+                                M0,60 A60,60 0 1,1 0,59.9;
+                                M30,60 A60,60 0 1,1 -30,60;
+                                M60,30 A60,60 0 0,1 -60,30;
+                                M60,0 C60,0 60,-30 30,-60 C0,-60 -60,-60 -60,-30 C-60,0 -30,0 0,0 C30,0 60,30 60,60 C60,90 30,60 -60,60;
+                                M60,-60 C60,-60 0,-60 -30,-60 C-60,-60 -60,-30 -60,-30 C-60,0 -30,0 0,0 C30,0 60,30 60,60 C60,60 60,60 -60,60;
+                                M60,0 C60,0 60,-30 30,-60 C0,-60 -60,-60 -60,-30 C-60,0 -30,0 0,0 C30,0 60,30 60,60 C60,90 30,60 -60,60;
+                                M0,60 A60,60 0 1,1 0,59.9"
+                keyTimes="0;0.15;0.3;0.5;0.7;0.85;1"
+                calcMode="spline"
+                keySplines="0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1"
+              />
+            </path>
+          </g>
+
+          <!-- I from Rectangle - Smooth shrinking -->
+          <g transform="translate(450, 200) scale(1.5)">
+            <path stroke="#4ECDC4" stroke-width="6" fill="none">
+              <animate
+                attributeName="d"
+                dur="6s"
+                repeatCount="indefinite"
+                values="
+                                M-60,-60 60,-60 60,60 -60,60 -60,-60;
+                                M-50,-60 50,-60 50,60 -50,60 -50,-60;
+                                M-40,-60 40,-60 40,60 -40,60 -40,-60;
+                                M-30,-60 30,-60 30,60 -30,60 -30,-60;
+                                M-15,-60 15,-60 15,60 -15,60 -15,-60;
+                                M-30,-60 30,-60 30,60 -30,60 -30,-60;
+                                M-60,-60 60,-60 60,60 -60,60 -60,-60"
+                keyTimes="0;0.15;0.3;0.5;0.7;0.85;1"
+                calcMode="spline"
+                keySplines="0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.5 1;0.4 0 0.2 1;0.4 0 0.2 1"
+              />
+            </path>
+          </g>
+
+          <!-- T from Triangle - Smooth transformation -->
+          <g transform="translate(675, 200) scale(1.5)">
+            <path stroke="#95A5A6" stroke-width="6" fill="none">
+              <animate
+                attributeName="d"
+                dur="6s"
+                repeatCount="indefinite"
+                values="
+                                M0,-75 65,37.5 -65,37.5;
+                                M0,-75 50,25 -50,25;
+                                M-30,-60 30,-60 0,-60 0,20;
+                                M-40,-60 40,-60 0,-60 0,40;
+                                M-60,-60 60,-60 0,-60 0,60;
+                                M-40,-60 40,-60 0,-60 0,40;
+                                M0,-75 65,37.5 -65,37.5"
+                keyTimes="0;0.15;0.3;0.5;0.7;0.85;1"
+                calcMode="spline"
+                keySplines="0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1"
+              />
+            </path>
+          </g>
+
+          <!-- E from Hexagon - Smooth morphing -->
+          <g transform="translate(900, 200) scale(1.5)">
+            <path stroke="#F1C40F" stroke-width="6" fill="none">
+              <animate
+                attributeName="d"
+                dur="6s"
+                repeatCount="indefinite"
+                values="
+                                M30,0 L15,-26 L-15,-26 L-30,0 L-15,26 L15,26 Z;
+                                M30,-20 L15,-40 L-15,-40 L-30,-20 L-15,0 L15,0 Z;
+                                M40,-40 L20,-40 L-20,-40 L-40,-20 L-20,0 L20,0 Z;
+                                M-30,-60 60,-60 60,-37.5 -15,-37.5 -15,0 30,0 30,22.5 -15,22.5 -15,60 60,60;
+                                M-30,-60 60,-60 60,-37.5 -15,-37.5 -15,0 45,0 45,22.5 -15,22.5 -15,60 60,60;
+                                M40,-40 L20,-40 L-20,-40 L-40,-20 L-20,0 L20,0 Z;
+                                M30,0 L15,-26 L-15,-26 L-30,0 L-15,26 L15,26 Z"
+                keyTimes="0;0.15;0.3;0.5;0.7;0.85;1"
+                calcMode="spline"
+                keySplines="0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1"
+              />
+            </path>
+          </g>
+
+          <!-- Добавляем стили -->
+          <style>
+            path {
+              stroke-linecap: round;
+              stroke-linejoin: round;
+            }
+          </style>
+        </svg>
       </div>
-      <nav class="main-nav">
-        <ul>
-          <li><a href="#">Главная</a></li>
-          <li><a href="#projects">Задания</a></li>
-          <li><a href="#about">О студенте</a></li>
-          <li><a href="src/contacts.html">Контакты</a></li>
-        </ul>
-      </nav>
+      <div class="title-name">Сайт - портфолио</div>
+      <div class="burger-menu" id="burger-menu-id">
+        <svg
+          class="burger-icon"
+          width="50px"
+          height="50px"
+          viewBox="0 0 32 32"
+          enable-background="new 0 0 32 32"
+          id="Editable-line"
+          version="1.1"
+          xml:space="preserve"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+        >
+          <line
+            class="line line1"
+            fill="none"
+            stroke="#000000"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-miterlimit="10"
+            stroke-width="2"
+            x1="7"
+            x2="25"
+            y1="7"
+            y2="7"
+          />
+          <line
+            class="line line2"
+            fill="none"
+            stroke="#000000"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-miterlimit="10"
+            stroke-width="2"
+            x1="7"
+            x2="25"
+            y1="16"
+            y2="16"
+          />
+          <line
+            class="line line3"
+            fill="none"
+            stroke="#000000"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-miterlimit="10"
+            stroke-width="2"
+            x1="7"
+            x2="25"
+            y1="25"
+            y2="25"
+          />
+        </svg>
+      </div>
     </header>
 
-    <!-- Main Content -->
-    <main>
-      <section id="about" class="about-section">
-        <h1>О студенте</h1>
-        <p class="justify-text">
-          Это сайт портфолио студента, где собраны все задания и курсовые
-          работы, выполненные в рамках курса "Веб-разработка". Студент активно
-          изучает современные технологии программирования, такие как HTML, CSS,
-          JavaScript, и их применение для создания адаптивных веб-приложений.
-        </p>
-        <p class="justify-text">
-          Основное направление учебной деятельности студента — это разработка
-          приложений с упором на пользовательский интерфейс (UI) и опыт
-          пользователя (UX). Также изучаются серверные технологии, что позволяет
-          создавать полнофункциональные веб-приложения, взаимодействующие с
-          базами данных и серверной логикой.
-        </p>
-        <p class="justify-text">
-          Проекты, представленные на сайте, включают задачи по адаптивной
-          вёрстке, разработке интерактивных элементов интерфейса и интеграции
-          клиентских решений с серверной частью. Курсовая работа, в частности,
-          посвящена созданию полноценного веб-приложения с регистрацией
-          пользователей, авторизацией и возможностью обмена данными с сервером.
-        </p>
-        <p class="justify-text">
-          Среди интересов студента также такие направления, как машинное
-          обучение, интеграция с различными API и создание мобильных версий
-          веб-приложений.
-        </p>
-      </section>
+    <main id="main">
+      <section class="main-content">
+        <nav class="main-nav" id="main-nav-menu">
+          <ul>
+            <li><a href="#">Главная</a></li>
+            <li><a href="#projects">Задания</a></li>
+            <li><a href="#about">О студенте</a></li>
+            <li><a href="#contact">Контакты</a></li>
+            <li>
+              <select id="theme-selector" onchange="changeTheme()">
+                <option value="default">Стандартная тема</option>
+                <option value="one-dark">One Dark</option>
+                <option value="atom">Atom</option>
+                <option value="vscode">VSCode</option>
+                <option value="dracula">Dracula</option>
+              </select>
+            </li>
+          </ul>
+        </nav>
 
-      <section id="projects" class="projects-section">
-        <h2>Задания и курсовая работа</h2>
-        <p>
-          Здесь представлены основные задания, выполненные в ходе обучения, а
-          также итоговая курсовая работа.
-        </p>
-        <div class="project-grid">
-          <div class="project-card">
-            <img
-              src="assets/img/task2_preview_image.png"
-              alt="task2"
-              class="project-image"
-            />
-            <div class="project-content">
-              <h3>Задание 2</h3>
-              <p class="justify-text">
-                Создать рисунки, с помощью стилевой таблицы pic.css. Размер
-                200х200px. Рисунок разместить в части Content.
-              </p>
-              <a href="src/task2.html" class="project-button">Перейти</a>
+        <section id="about" class="about-section">
+          <div class="container">
+            <div class="about-content">
+              <div class="about-image">
+                <img src="assets/img/home_img.jpg" alt="Profile Picture" />
+              </div>
+              <div class="about-details">
+                <h1>Обо мне</h1>
+                <p class="justify-text">
+                  Это сайт портфолио студента, где собраны все задания и
+                  курсовые работы, выполненные в рамках курса "Веб-разработка".
+                  Студент активно изучает современные технологии
+                  программирования, такие как HTML, CSS, JavaScript, и их
+                  применение для создания адаптивных веб-приложений.
+                </p>
+                <p class="justify-text">
+                  Основное направление учебной деятельности студента — это
+                  разработка приложений с упором на пользовательский интерфейс
+                  (UI) и опыт пользователя (UX). Также изучаются серверные
+                  технологии, что позволяет создавать полнофункциональные
+                  веб-приложения, взаимодействующие с базами данных и серверной
+                  логикой.
+                </p>
+                <p class="justify-text">
+                  Проекты, представленные на сайте, включают задачи по
+                  адаптивной вёрстке, разработке интерактивных элементов
+                  интерфейса и интеграции клиентских решений с серверной частью.
+                  Курсовая работа, в частности, посвящена созданию полноценного
+                  веб-приложения с регистрацией пользователей, авторизацией и
+                  возможностью обмена данными с сервером.
+                </p>
+                <p class="justify-text">
+                  Среди интересов студента также такие направления, как машинное
+                  обучение, интеграция с различными API и создание мобильных
+                  версий веб-приложений.
+                </p>
+              </div>
+            </div>
+            <div class="skills-section">
+              <h1>Мои навыки</h1>
+              <ul>
+                <li class="icon-text">
+                  <img src="assets/img/icons/cpp.png" alt="C++" />
+                  <div class="img-text-container">C++</div>
+                </li>
+                <li class="icon-text">
+                  <img src="assets/img/icons/rust.png" alt="Rust" />
+                  <div class="img-text-container">Rust</div>
+                </li>
+                <li class="icon-text">
+                  <img src="assets/img/icons/python.png" alt="Python" />
+                  <div class="img-text-container">Python</div>
+                </li>
+                <li class="icon-text">
+                  <img src="assets/img/icons/js.png" alt="JavaScript" />
+                  <div class="img-text-container">JavaScript</div>
+                </li>
+                <li class="icon-text">
+                  <img
+                    src="assets/img/icons/backend.png"
+                    alt="Серверные технологии"
+                  />
+                  <div class="img-text-container">Серверные технологии</div>
+                </li>
+                <li class="icon-text">
+                  <img src="assets/img/icons/db.png" alt="Базы данных" />
+                  <div class="img-text-container">Базы данных</div>
+                </li>
+                <li class="icon-text">
+                  <img src="assets/img/icons/ml.png" alt="Машинное обучение" />
+                  <div class="img-text-container">Машинное обучение</div>
+                </li>
+                <li class="icon-text">
+                  <img src="assets/img/icons/api.png" alt="Интеграция с API" />
+                  <div class="img-text-container">Интеграция с API</div>
+                </li>
+                <li class="icon-text">
+                  <img src="assets/img/icons/qt.png" alt="Qt5/Qt6/PyQt" />
+                  <div class="img-text-container">Qt5/Qt6/PyQt</div>
+                </li>
+                <li class="icon-text">
+                  <img src="assets/img/icons/opencv.png" alt="Opencv" />
+                  <div class="img-text-container">Opencv</div>
+                </li>
+                <li class="icon-text">
+                  <img src="assets/img/icons/django.png" alt="FastApi/Django" />
+                  <div class="img-text-container">FastApi/Django</div>
+                </li>
+              </ul>
             </div>
           </div>
-          <div class="project-card">
-            <img
-              src="assets/img/task3_preview_image.png"
-              alt="task3"
-              class="project-image"
-            />
-            <div class="project-content">
-              <h3>Задание 3</h3>
+        </section>
+        <section id="contact" class="contact-section">
+            <div class="contact-container">
+              <h1>Контакты</h1>
               <p class="justify-text">
-                Задание Flexbox разместить на отдельной странице сайта. Архив
-                назвать site_Фамилия_Вариант. Создать элемент flexbox, размером
-                не более 200 px, который состоит из заданных изображений и слов.
-                По наведению мыши и нажатию его состояние и содержимое меняется.
+                Свяжитесь со мной по следующим контактам:
               </p>
-              <a href="src/task3.html" class="project-button">Перейти</a>
+              <ul class="contact-list">
+                <li class="icon-text">
+                  <img src="assets/img/icons/email.png" alt="FastApi/Django" />
+                  <a href="mailto:student@example.com">Email</a>
+                </li>
+                <li class="icon-text">
+                  <img src="assets/img/icons/phone.png" alt="FastApi/Django" />
+                  <a href="tel:+1234567890">+123 456 7890</a>
+                </li>
+                <li class="icon-text">
+                  <img src="assets/img/icons/linkenid.png" alt="FastApi/Django" />
+                  <a href="#">LinkedIn</a>
+                </li>
+                <li class="icon-text">
+                  <img src="assets/img/icons/github.png" alt="FastApi/Django" />
+                  <a href="https://github.com/massonskyi">GitHub</a>
+                </li>
+                <li class="icon-text">
+                  <img src="assets/img/icons/vk.png" alt="FastApi/Django" />
+                  <a href="https://vk.com/masonskii">Vk</a>
+                </li>
+                <li class="icon-text">
+                  <img src="assets/img/icons/telegram.png" alt="FastApi/Django" />
+                  <a href="@msnskiy">Telegram</a>
+                </li>
+              </ul>
+            </div>
+        </section>
+        <section id="projects" class="projects-section">
+          <div class="title-block-project">
+            <h2>Задания и курсовая работа</h2>
+            <p>
+              Здесь представлены основные задания, выполненные в ходе обучения,
+              а также итоговая курсовая работа.
+            </p>
+          </div>
+          <div class="project-grid">
+            <div class="project-card rotated-block">
+              <img
+                src="assets/img/task2_preview_image.png"
+                alt="task2"
+                class="project-image"
+              />
+              <div class="project-content">
+                <h3>Задание 2</h3>
+                <p class="justify-text">
+                  Создать рисунки, с помощью стилевой таблицы pic.css. Размер
+                  200х200px. Рисунок разместить в части Content.
+                </p>
+                <a href="src/task2.html" class="project-button">Перейти</a>
+              </div>
+            </div>
+            <div class="project-card rotated-block-right">
+              <img
+                src="assets/img/task3_preview_image.png"
+                alt="task3"
+                class="project-image"
+              />
+              <div class="project-content">
+                <h3>Задание 3</h3>
+                <p class="justify-text">
+                  Задание Flexbox разместить на отдельной странице сайта. Архив
+                  назвать site_Фамилия_Вариант. Создать элемент flexbox,
+                  размером не более 200 px, который состоит из заданных
+                  изображений и слов. По наведению мыши и нажатию его состояние
+                  и содержимое меняется.
+                </p>
+                <a href="src/task3.html" class="project-button">Перейти</a>
+              </div>
+            </div>
+            <div class="project-card rotated-block">
+              <img
+                src="assets/img/task4_preview_image.png"
+                alt="task4"
+                class="project-image"
+              />
+              <div class="project-content">
+                <h3>Задание 4</h3>
+                <p class="justify-text">
+                  Создайте два класса class1 и class2. В них задайте два разных
+                  цвета фона. При каждом четном нажатии на кнопку выводится
+                  фраза с применением класса class1, при нечетном class2. Фразы
+                  выводятся в случайном, не повторяющемся порядке. Когда фразы
+                  заканчиваются, то выводится alert с фразой "Фразы
+                  закончились". По нажатию на кнопку "Перекрасить" у всех четных
+                  строк изменяется начертание на полужирное.
+                </p>
+                <a href="src/task4.html" class="project-button">Перейти</a>
+              </div>
+            </div>
+            <div class="project-card rotated-block-right">
+              <img
+                src="assets/img/task5_preview_image.png"
+                alt="task5"
+                class="project-image"
+              />
+              <div class="project-content">
+                <h3>Задание 5</h3>
+                <p class="justify-text">
+                  Разработать и реализовать на странице сайта перетаскивание
+                  объектов в зависимости от варианта задания. Библиотеки
+                  использовать нельзя. Страница расположена на сайте, а не на
+                  пустой страничке. Приветствуется нарисовать свои фигуры.
+                  Количество собираемых элементов не менее 4. Базовые фигуры
+                  должны быть повернуты. Реализуйте механизм поворота фигуры.
+                  Если картинка будет собрана правильно, то пользователь видит
+                  анимацию. Готовая картинка может располагаться в любом месте
+                  контента.
+                </p>
+                <a href="src/task5.html" class="project-button">Перейти</a>
+              </div>
+            </div>
+            <div class="project-card rotated-block">
+              <img
+                src="assets/img/courses_preview_image.png"
+                alt="courses"
+                class="project-image"
+              />
+              <div class="project-content">
+                <h3>Курсовая работа</h3>
+                <p class="justify-text">
+                  Клиентское приложение на языке JS Разработка игрового
+                  приложения по поиску заданного текста
+                </p>
+                <a href="src/courses_work/index.html" class="project-button"
+                  >Перейти</a
+                >
+              </div>
             </div>
           </div>
-          <div class="project-card">
-            <img
-              src="assets/img/task4_preview_image.png"
-              alt="task4"
-              class="project-image"
-            />
-            <div class="project-content">
-              <h3>Задание 4</h3>
-              <p class="justify-text">
-                Создайте два класса class1 и class2. В них задайте два разных
-                цвета фона. При каждом четном нажатии на кнопку выводится фраза
-                с применением класса class1, при нечетном class2. Фразы
-                выводятся в случайном, не повторяющемся порядке. Когда фразы
-                заканчиваются, то выводится alert с фразой "Фразы закончились".
-                По нажатию на кнопку "Перекрасить" у всех четных строк
-                изменяется начертание на полужирное.
-              </p>
-              <a href="src/task4.html" class="project-button">Перейти</a>
-            </div>
-          </div>
-          <div class="project-card">
-            <img
-              src="assets/img/task5_preview_image.png"
-              alt="task5"
-              class="project-image"
-            />
-            <div class="project-content">
-              <h3>Задание 5</h3>
-              <p class="justify-text">
-                Разработать и реализовать на странице сайта перетаскивание
-                объектов в зависимости от варианта задания. Библиотеки
-                использовать нельзя. Страница расположена на сайте, а не на
-                пустой страничке. Приветствуется нарисовать свои фигуры.
-                Количество собираемых элементов не менее 4. Базовые фигуры
-                должны быть повернуты. Реализуйте механизм поворота фигуры. Если
-                картинка будет собрана правильно, то пользователь видит
-                анимацию. Готовая картинка может располагаться в любом месте
-                контента.
-              </p>
-              <a href="src/task5.html" class="project-button">Перейти</a>
-            </div>
-          </div>
-          <div class="project-card">
-            <img
-              src="assets/img/courses_preview_image.png"
-              alt="courses"
-              class="project-image"
-            />
-            <div class="project-content">
-              <h3>Курсовая работа</h3>
-              <p class="justify-text">
-                Клиентское приложение на языке JS Разработка игрового приложения
-                по поиску заданного текста
-              </p>
-              <a href="src/courses_work/index.html" class="project-button">Перейти</a>
-            </div>
-          </div>
-        </div>
+        </section>
       </section>
     </main>
 
@@ -163,5 +425,46 @@
         <a href="mailto:student@example.com">student@example.com</a>
       </p>
     </footer>
+
+    <script src="assets/scripts/home.js"></script>
+    <script>
+      function changeTheme() {
+        const theme = document.getElementById("theme-selector").value;
+        document.body.className = `theme-${theme}`;
+        localStorage.setItem("theme", theme);
+      }
+
+      function applySavedTheme() {
+        const savedTheme = localStorage.getItem("theme");
+        if (savedTheme) {
+          document.body.className = `theme-${savedTheme}`;
+          document.getElementById("theme-selector").value = savedTheme;
+        }
+      }
+
+      // Функция для обработки событий прокрутки
+      function handleScroll() {
+        const sections = document.querySelectorAll("section");
+        sections.forEach((section) => {
+          const rect = section.getBoundingClientRect();
+          if (rect.top <= window.innerHeight * 0.75 && rect.bottom >= 0) {
+            section.classList.add("visible");
+          } else {
+            section.classList.remove("visible");
+          }
+        });
+      }
+
+      // Добавляем обработчик события прокрутки
+      window.addEventListener("scroll", handleScroll);
+
+      // Вызываем функцию при загрузке страницы
+      window.addEventListener("load", () => {
+        const header = document.querySelector(".site-header");
+        header.classList.add("loaded");
+        handleScroll();
+        applySavedTheme();
+      });
+    </script>
   </body>
 </html>
