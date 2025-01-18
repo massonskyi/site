@@ -809,7 +809,7 @@ class QuizGame {
     });
   
     const checkButton = document.createElement("button");
-    checkButton.textContent = "Check Order";
+    checkButton.textContent = "Проверить";
     checkButton.className = "check-button";
     checkButton.addEventListener("click", () => {
       const currentOrder = [
