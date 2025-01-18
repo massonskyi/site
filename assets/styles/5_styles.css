@@ -78,7 +78,13 @@
         opacity: 0;
     }
 }
+.main-content-5{
+    margin: 150px 0;
 
+}
+main{
+    height: 90vh !important;
+}
 a {
     color: #1e68ce;
 }
@@ -122,13 +128,7 @@ span {
     background-repeat: no-repeat;
 }
 
-.main-content {
-    margin-left: 5px;
-    background-color: #ecf0f1;
-    font-size: 1em;
-    padding: 10px;
-    margin-bottom: 10px;
-}
+
 .menu-btn-content {
     display: inline-block; /* Для правильного позиционирования */
     margin-left: 5px;

@@ -292,7 +292,7 @@ button:hover {
 
 }
 .phrase-word:hover,
-.sort-item: hover{
+.sort-item:hover{
     background-color: var(  --game-text-background-color-hover);
     color: var(--game-text-color-hover);
 }

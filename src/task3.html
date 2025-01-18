@@ -12,17 +12,108 @@
     <!-- Header -->
     <header class="site-header">
         <div class="logo">
-            <div class="circle-logo">
-                <span class="logo-text">S</span>
-            </div>
-        </div>
-        <nav class="main-nav">
-            <ul>
-                <li><a href="../index.html">Главная</a></li>
-                <li><a href="../index.html">О студенте</a></li>
-                <li><a href="contacts.html">Контакты</a></li>
-            </ul>
-        </nav>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400">
+              <!-- S from Circle - Smooth morphing -->
+              <g transform="translate(225, 200) scale(1.5)">
+                <path stroke="#FF6B6B" stroke-width="6" fill="none">
+                  <animate
+                    attributeName="d"
+                    dur="6s"
+                    repeatCount="indefinite"
+                    values="
+                                    M0,60 A60,60 0 1,1 0,59.9;
+                                    M30,60 A60,60 0 1,1 -30,60;
+                                    M60,30 A60,60 0 0,1 -60,30;
+                                    M60,0 C60,0 60,-30 30,-60 C0,-60 -60,-60 -60,-30 C-60,0 -30,0 0,0 C30,0 60,30 60,60 C60,90 30,60 -60,60;
+                                    M60,-60 C60,-60 0,-60 -30,-60 C-60,-60 -60,-30 -60,-30 C-60,0 -30,0 0,0 C30,0 60,30 60,60 C60,60 60,60 -60,60;
+                                    M60,0 C60,0 60,-30 30,-60 C0,-60 -60,-60 -60,-30 C-60,0 -30,0 0,0 C30,0 60,30 60,60 C60,90 30,60 -60,60;
+                                    M0,60 A60,60 0 1,1 0,59.9"
+                    keyTimes="0;0.15;0.3;0.5;0.7;0.85;1"
+                    calcMode="spline"
+                    keySplines="0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1"
+                  />
+                </path>
+              </g>
+    
+              <!-- I from Rectangle - Smooth shrinking -->
+              <g transform="translate(450, 200) scale(1.5)">
+                <path stroke="#4ECDC4" stroke-width="6" fill="none">
+                  <animate
+                    attributeName="d"
+                    dur="6s"
+                    repeatCount="indefinite"
+                    values="
+                                    M-60,-60 60,-60 60,60 -60,60 -60,-60;
+                                    M-50,-60 50,-60 50,60 -50,60 -50,-60;
+                                    M-40,-60 40,-60 40,60 -40,60 -40,-60;
+                                    M-30,-60 30,-60 30,60 -30,60 -30,-60;
+                                    M-15,-60 15,-60 15,60 -15,60 -15,-60;
+                                    M-30,-60 30,-60 30,60 -30,60 -30,-60;
+                                    M-60,-60 60,-60 60,60 -60,60 -60,-60"
+                    keyTimes="0;0.15;0.3;0.5;0.7;0.85;1"
+                    calcMode="spline"
+                    keySplines="0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.5 1;0.4 0 0.2 1;0.4 0 0.2 1"
+                  />
+                </path>
+              </g>
+    
+              <!-- T from Triangle - Smooth transformation -->
+              <g transform="translate(675, 200) scale(1.5)">
+                <path stroke="#95A5A6" stroke-width="6" fill="none">
+                  <animate
+                    attributeName="d"
+                    dur="6s"
+                    repeatCount="indefinite"
+                    values="
+                                    M0,-75 65,37.5 -65,37.5;
+                                    M0,-75 50,25 -50,25;
+                                    M-30,-60 30,-60 0,-60 0,20;
+                                    M-40,-60 40,-60 0,-60 0,40;
+                                    M-60,-60 60,-60 0,-60 0,60;
+                                    M-40,-60 40,-60 0,-60 0,40;
+                                    M0,-75 65,37.5 -65,37.5"
+                    keyTimes="0;0.15;0.3;0.5;0.7;0.85;1"
+                    calcMode="spline"
+                    keySplines="0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1"
+                  />
+                </path>
+              </g>
+    
+              <!-- E from Hexagon - Smooth morphing -->
+              <g transform="translate(900, 200) scale(1.5)">
+                <path stroke="#F1C40F" stroke-width="6" fill="none">
+                  <animate
+                    attributeName="d"
+                    dur="6s"
+                    repeatCount="indefinite"
+                    values="
+                                    M30,0 L15,-26 L-15,-26 L-30,0 L-15,26 L15,26 Z;
+                                    M30,-20 L15,-40 L-15,-40 L-30,-20 L-15,0 L15,0 Z;
+                                    M40,-40 L20,-40 L-20,-40 L-40,-20 L-20,0 L20,0 Z;
+                                    M-30,-60 60,-60 60,-37.5 -15,-37.5 -15,0 30,0 30,22.5 -15,22.5 -15,60 60,60;
+                                    M-30,-60 60,-60 60,-37.5 -15,-37.5 -15,0 45,0 45,22.5 -15,22.5 -15,60 60,60;
+                                    M40,-40 L20,-40 L-20,-40 L-40,-20 L-20,0 L20,0 Z;
+                                    M30,0 L15,-26 L-15,-26 L-30,0 L-15,26 L15,26 Z"
+                    keyTimes="0;0.15;0.3;0.5;0.7;0.85;1"
+                    calcMode="spline"
+                    keySplines="0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1"
+                  />
+                </path>
+              </g>
+    
+              <!-- Добавляем стили -->
+              <style>
+                path {
+                  stroke-linecap: round;
+                  stroke-linejoin: round;
+                }
+              </style>
+            </svg>
+          </div>
+          <div class="title-name">Сайт - портфолио</div>
+          <a href="../index.html">Вернуться</a>
+          </div>
+          
     </header>
 
     <!-- Main Content -->
@@ -30,6 +121,45 @@
         <main>
             <div class="container">
                 <div class="flex-item">
+                    <div class="image-container">
+                        <img src="../assets/img/flexbox_images/avto1.jpg" alt="Initial Image" class="image initial-image">
+                        <img src="../assets/img/flexbox_images/avto2.png" alt="Hover Image" class="image hover-image">
+                        <img src="../assets/img/flexbox_images/avto3.png" alt="Active Image" class="image active-image">
+                    </div>
+                    <div class="text-container">
+                        <p class="text hover-text">Автомойка "Чистюля"</p>
+                    </div>
+                    <div class="text-container">
+                        <p class="text active-text">Самая быстрая мойка</p>
+                    </div>
+                </div>
+                <div class="flex-item">
+                    <div class="image-container">
+                        <img src="../assets/img/flexbox_images/avto1.jpg" alt="Initial Image" class="image initial-image">
+                        <img src="../assets/img/flexbox_images/avto2.png" alt="Hover Image" class="image hover-image">
+                        <img src="../assets/img/flexbox_images/avto3.png" alt="Active Image" class="image active-image">
+                    </div>
+                    <div class="text-container">
+                        <p class="text hover-text">Автомойка "Чистюля"</p>
+                    </div>
+                    <div class="text-container">
+                        <p class="text active-text">Самая быстрая мойка</p>
+                    </div>
+                </div>
+                <div class="flex-item">
+                    <div class="image-container">
+                        <img src="../assets/img/flexbox_images/avto1.jpg" alt="Initial Image" class="image initial-image">
+                        <img src="../assets/img/flexbox_images/avto2.png" alt="Hover Image" class="image hover-image">
+                        <img src="../assets/img/flexbox_images/avto3.png" alt="Active Image" class="image active-image">
+                    </div>
+                    <div class="text-container">
+                        <p class="text hover-text">Автомойка "Чистюля"</p>
+                    </div>
+                    <div class="text-container">
+                        <p class="text active-text">Самая быстрая мойка</p>
+                    </div>
+                </div>
+                                <div class="flex-item">
                     <div class="image-container">
                         <img src="../assets/img/flexbox_images/avto1.jpg" alt="Initial Image" class="image initial-image">
                         <img src="../assets/img/flexbox_images/avto2.png" alt="Hover Image" class="image hover-image">
@@ -50,7 +180,45 @@
         <p>&copy; 2024 Портфолио студента. Все права защищены.</p>
         <p>Связаться с нами: <a href="mailto:student@example.com">student@example.com</a></p>
     </footer>
-
+    <script>
+        function changeTheme() {
+          const theme = document.getElementById("theme-selector").value;
+          document.body.className = `theme-${theme}`;
+          localStorage.setItem("theme", theme);
+        }
+  
+        function applySavedTheme() {
+          const savedTheme = localStorage.getItem("theme");
+          if (savedTheme) {
+            document.body.className = `theme-${savedTheme}`;
+            document.getElementById("theme-selector").value = savedTheme;
+          }
+        }
+  
+        // Функция для обработки событий прокрутки
+        function handleScroll() {
+          const sections = document.querySelectorAll("section");
+          sections.forEach((section) => {
+            const rect = section.getBoundingClientRect();
+            if (rect.top <= window.innerHeight * 0.75 && rect.bottom >= 0) {
+              section.classList.add("visible");
+            } else {
+              section.classList.remove("visible");
+            }
+          });
+        }
+  
+        // Добавляем обработчик события прокрутки
+        window.addEventListener("scroll", handleScroll);
+  
+        // Вызываем функцию при загрузке страницы
+        window.addEventListener("load", () => {
+          const header = document.querySelector(".site-header");
+          header.classList.add("loaded");
+          handleScroll();
+          applySavedTheme();
+        });
+      </script>
 
 </body>
 </html>

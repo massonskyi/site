@@ -1,4 +1,6 @@
-
+main{
+    height: 90vh !important;
+}
 .content {
     width: auto;
     height: 90vh;
